@@ -7,8 +7,24 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
+  <nav class="navbar navbar-default navbar-static-top">
+    <div class="container">
+      <div class="navbar-header">
+        <%= link_to 'Флэшкарточкер', root_path, class: "navbar-brand" %>
+      </div>
+      <div class="navbar-coolapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#">Все карточки</a></li>
+          <li><a href="#">Добавить карточку</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="container">
+    <div class="jumbotron">
+      <%= yield %>
+    </div>
+  </div>
 
 </body>
 </html>
