@@ -10,10 +10,7 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
-
-group :test do
-  gem 'sqlite3'
-end
+gem 'pg', '~> 0.18.4'
 
 group :development, :test do
   gem 'byebug'
@@ -22,8 +19,4 @@ end
 group :development do
   gem 'web-console', '~> 2.0'
   gem 'spring'
-end
-
-group :development, :production do
-  gem 'pg', '~> 0.18.4'
 end
