@@ -16,14 +16,18 @@
         <ul class="nav navbar-nav navbar-right">
           <li>
             <%= link_to 'Все карточки', cards_path %>
+          </li>
           <li>
-            <a href="#">Добавить карточку</a>
+            <%= link_to 'Добавить карточку', new_card_path %>
           </li>
         </ul>
       </div>
     </div>
   </nav>
   <div class="container">
+    <% flash.each do |key, value| %>
+        <%= content_tag(:div, value, class: "alert alert-#{key}") %>
+    <% end %>
     <%= yield %>
   </div>
 </body>
