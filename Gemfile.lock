@@ -153,6 +153,7 @@ DEPENDENCIES
   coffee-rails (~> 4.1.0)
   jbuilder (~> 2.0)
   jquery-rails
+  nokogiri (~> 1.6, >= 1.6.8)
   pg (~> 0.18.4)
   rails (= 4.2.7)
   sass-rails (~> 5.0)
