@@ -1,11 +1,11 @@
 require 'nokogiri'
 require 'open-uri'
 
-DOMAIN = 'http://www.languagedaily.com'
+DOMAIN = 'http://www.languagedaily.com'.freeze
 START_PAGE = DOMAIN + '/learn-german/vocabulary/common-german-words'
-SEARCH_PATTERN = /\A\/learn-german\/vocabulary\/[a-z-]*\d*\z/
-ORIGINAL_WORD_TAG = 'td.bigLetter'
-TRANSLATED_TEXT_TAG = 'td.bigLetter + td'
+SEARCH_PATTERN = %r{\A/learn-german/vocabulary/[a-z-]*\d*\z}
+ORIGINAL_WORD_TAG = 'td.bigLetter'.freeze
+TRANSLATED_TEXT_TAG = 'td.bigLetter + td'.freeze
 EMPTY_STRING_PATTERN = /\u00A0/
 
 def open_page(link)
@@ -13,15 +13,15 @@ def open_page(link)
 end
 
 def get_links_hrefs(page)
-  page.css('a').map{ |link| link['href']}.uniq
+  page.css('a').map { |link| link['href'] }.uniq
 end
 
-def find_required_links (links, link_pattern)
-  links.find_all{ |link| link =~ link_pattern }.map { |link| link = DOMAIN + link }
+def find_required_links(links, link_pattern)
+  links.select { |link| link =~ link_pattern }.map { |link| DOMAIN + link }
 end
 
 def get_element_text(element)
-  element.map{ |word| word.text }
+  element.map(&:text)
 end
 
 def get_all_words_from_all_pages(route)
@@ -40,7 +40,7 @@ def find_words(page)
 end
 
 def remove_empty_words(words, empty_string_pattern)
-  words.delete_if { |key, value| value =~ empty_string_pattern }
+  words.delete_if { |_key, value| value =~ empty_string_pattern }
 end
 
 page = open_page(START_PAGE)
