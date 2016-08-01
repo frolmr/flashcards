@@ -12,6 +12,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'pg', '~> 0.18.4'
 gem 'simple_form', '~> 3.2', '>= 3.2.1'
+gem 'nokogiri', '~> 1.6', '>= 1.6.8'
 
 group :development, :test do
   gem 'byebug'
