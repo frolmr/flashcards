@@ -1,15 +1,17 @@
 class Card < ActiveRecord::Base
+  scope :expires, -> { where('review_date <= ?', Date.today) }
+
   before_validation :add_review_date, on: :create
 
   validates :original_text, :translated_text, :review_date, presence: true
 
   after_validation :compare_words
 
-  private
+  def add_review_date
+    self.review_date = Time.now + 3.days
+  end
 
-    def add_review_date
-      self.review_date = Time.now + 3.days
-    end
+  private
 
     def word_processing(word)
       word.gsub(/\W/, '').downcase

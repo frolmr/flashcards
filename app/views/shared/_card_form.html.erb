@@ -1,0 +1,13 @@
+<p>Как переводится данная фраза?</p>
+<p class="text-center">
+  <em><%= @random_card.translated_text %></em>
+</p>
+<br>
+<br>
+<div>
+  <%= simple_form_for :card, url: :check do |f| %>
+    <%= f.input :original_text, label: "Перевод:" %>
+    <%= f.hidden_field :card_id, value: @random_card.id %>
+    <%= f.submit "Проверить", class: 'btn btn-primary' %>
+  <% end %>
+</div>
