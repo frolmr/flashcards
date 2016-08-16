@@ -11,6 +11,15 @@ class Card < ActiveRecord::Base
     self.review_date = Time.now + 3.days
   end
 
+  def card_check(text)
+    word_processing(self.original_text) == word_processing(text)
+  end
+
+  def success
+    self.add_review_date
+    self.save
+  end
+
   private
 
     def word_processing(word)

@@ -5,14 +5,12 @@ class StaticPageController < ApplicationController
 
   def check
     @card = Card.find(params[:card][:card_id])
-    if @card.original_text == params[:card][:original_text]
-      redirect_to root_path
+    if @card.card_check(params[:card][:original_text])
+      @card.success
       flash[:success] = "Правильно!"
-      @card.add_review_date
-      @card.save
     else
-      redirect_to root_path
       flash[:danger] = "Не правильно!"
     end
+    redirect_to root_path
   end
 end
