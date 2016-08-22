@@ -16,6 +16,7 @@ gem 'nokogiri', '~> 1.6', '>= 1.6.8'
 
 group :development, :test do
   gem 'byebug'
+  gem 'rspec-rails', '~> 3.5', '>= 3.5.1'
 end
 
 group :development do
