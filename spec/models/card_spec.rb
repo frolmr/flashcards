@@ -4,7 +4,7 @@ RSpec.describe Card, type: :model do
   subject { described_class.new(original_text: 'hello my Friend', translated_text: 'привет, мой друг') }
 
   it 'method add_review_date works correctly' do
-    expect(subject.add_review_date).to eq(Time.now.change(usec: 0) + 3.days)
+    expect(subject.add_review_date.to_i).to eq(Time.now.to_i + 3.days)
   end
 
   it 'has correct word preprocessor' do
