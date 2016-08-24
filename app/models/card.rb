@@ -8,7 +8,7 @@ class Card < ActiveRecord::Base
   after_validation :compare_words
 
   def add_review_date
-    self.review_date = Time.now + 3.days
+    self.review_date = Time.now.change(usec: 0) + 3.days
   end
 
   def card_check(text)
@@ -23,7 +23,7 @@ class Card < ActiveRecord::Base
   private
 
   def word_processing(word)
-    word.gsub(/\W/, '').downcase
+    word.gsub(/\W/, '').downcase if word
   end
 
   def compare_words
