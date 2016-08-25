@@ -23,7 +23,7 @@ class Card < ActiveRecord::Base
   private
 
   def word_processing(word)
-    word.gsub(/\W/, '').downcase
+    word.gsub(/\W/, '').downcase if word
   end
 
   def compare_words

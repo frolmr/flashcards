@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 ruby '2.3.0'
-#ruby-gemset=flashcards
+# ruby-gemset=flashcards
 
 gem 'rails', '4.2.7'
 gem 'sass-rails', '~> 5.0'
@@ -16,6 +16,7 @@ gem 'nokogiri', '~> 1.6', '>= 1.6.8'
 
 group :development, :test do
   gem 'byebug'
+  gem 'rspec-rails'
 end
 
 group :development do
