@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 ruby '2.3.0'
-# ruby-gemset=flashcards
+#ruby-gemset=flashcards
 
 gem 'rails', '4.2.7'
 gem 'sass-rails', '~> 5.0'
@@ -22,4 +22,9 @@ end
 group :development do
   gem 'web-console', '~> 2.0'
   gem 'spring'
+end
+
+group :test do
+  gem 'capybara'
+  gem 'factory_girl_rails'
 end
