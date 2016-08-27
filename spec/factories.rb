@@ -8,6 +8,6 @@ FactoryGirl.define do
     original_text 'Hello'
     translated_text 'Привет'
     review_date Time.now
-    association :user, factory: :user
+    user
   end
 end
