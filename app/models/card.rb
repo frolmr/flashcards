@@ -1,9 +1,11 @@
 class Card < ActiveRecord::Base
+  belongs_to :user
+
   scope :expires, -> { where('review_date <= ?', Date.today) }
 
   before_validation :add_review_date, on: :create
 
-  validates :original_text, :translated_text, :review_date, presence: true
+  validates :original_text, :translated_text, :review_date, :user, presence: true
 
   after_validation :compare_words
 
