@@ -1,6 +1,6 @@
 class StaticPageController < ApplicationController
   def home
-    @random_card = Card.expires.sample ? Card.expires.sample : Card.all.sample
+    @random_card = Card.expires.sample || Card.all.sample
   end
 
   def check
