@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/frolmr/flashcards.svg?branch=feature_specs)](https://travis-ci.org/frolmr/flashcards)
+
 == README
 
 This README would normally document whatever steps are necessary to get the

@@ -12,7 +12,6 @@
 
 # Ignore config files
 /config/database.yml
-/config/secrets.yml
 
 #Ignore vim temporary files
 *.swp
