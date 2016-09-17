@@ -1,4 +1,4 @@
-require 'spec_helper'
+require 'rails_helper'
 
 describe "SignUp", type: :feature do
   before { visit 'users/new' }
