@@ -2,7 +2,7 @@ class CardsController < ApplicationController
   before_action :get_card, only: [:edit, :update, :destroy]
 
   def index
-    @cards = Card.all
+    @cards = Card.where(user_id: current_user.id)
   end
 
   def new
@@ -11,6 +11,7 @@ class CardsController < ApplicationController
 
   def create
     @card = Card.new(card_params)
+    @card.user_id = current_user.id
     if @card.save
       flash[:success] = "Новая карточка создана"
       redirect_to cards_path
@@ -40,11 +41,15 @@ class CardsController < ApplicationController
 
   private
 
-    def card_params
-      params.require(:card).permit(:original_text, :translated_text)
-    end
+  def card_params
+    params.require(:card).permit(:original_text, :translated_text)
+  end
 
-    def get_card
-      @card = Card.find(params[:id])
-    end
+  def get_card
+    @card = Card.find(params[:id])
+  end
+
+  def correct_user
+
+  end
 end

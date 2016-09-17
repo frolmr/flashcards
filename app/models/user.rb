@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
   authenticates_with_sorcery!
-  has_many :cards
+  has_many :cards, dependent: :destroy
 
   before_save :downcase_email
 

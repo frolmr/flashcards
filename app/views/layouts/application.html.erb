@@ -22,6 +22,9 @@
             <%= link_to 'Добавить карточку', new_card_path %>
           </li>
           <li>
+            <%= link_to "Профиль", current_user %>
+          </li>
+          <li>
             <%= link_to "Выйти", :logout, method: :post %>
           </li>
           <% else %>

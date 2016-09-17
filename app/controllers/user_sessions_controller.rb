@@ -4,7 +4,7 @@ class UserSessionsController < ApplicationController
   end
 
   def create
-    if @user = login(params[:email], params[:password])
+    if @user = login(params[:session][:email], params[:session][:password])
       redirect_back_or_to(root_path, success: 'Успешный вход')
     else
       flash.now[:danger] = 'Не удалось войти'

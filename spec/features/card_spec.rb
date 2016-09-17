@@ -4,7 +4,10 @@ describe 'card checking', type: :feature do
   let!(:card) { create(:card) }
 
   before(:each) do
-    visit root_path
+    visit login_path
+    fill_in "Email", with: 'user@test.ru'
+    fill_in "Пароль", with: 'foobar'
+    click_button "Войти"
   end
 
   it 'should approve the correct translation' do
