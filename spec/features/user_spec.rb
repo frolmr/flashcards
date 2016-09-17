@@ -11,7 +11,6 @@ describe "SignUp", type: :feature do
     expect(page).to have_content "Добавлен новый пользователь"
   end
 
-
   it 'should NOT register user with incorrect data' do
     fill_in "Email", with: 'foo@foo.net'
     fill_in "Пароль", with: 'foobar'

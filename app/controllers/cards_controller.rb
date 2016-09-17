@@ -48,8 +48,4 @@ class CardsController < ApplicationController
   def get_card
     @card = Card.find(params[:id])
   end
-
-  def correct_user
-
-  end
 end
