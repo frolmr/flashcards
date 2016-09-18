@@ -2,7 +2,7 @@ class CardsController < ApplicationController
   before_action :get_card, only: [:edit, :update, :destroy]
 
   def index
-    @cards = Card.where(user_id: current_user.id)
+    @cards = current_user.cards
   end
 
   def new
@@ -10,7 +10,7 @@ class CardsController < ApplicationController
   end
 
   def create
-    @card = Card.new(card_params)
+    @card = current_user.cards.build(card_params)
     @card.user_id = current_user.id
     if @card.save
       flash[:success] = "Новая карточка создана"
