@@ -1,3 +1,4 @@
+<% if @random_card %>
 <p>Как переводится данная фраза?</p>
 <p class="text-center">
   <em><%= @random_card.translated_text %></em>
@@ -11,3 +12,6 @@
     <%= f.submit "Проверить", class: 'btn btn-primary' %>
   <% end %>
 </div>
+<% else %>
+<p>Первый в мире удобный менеджер флеш-карточек. Именно так.</p>
+<% end %>
