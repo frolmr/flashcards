@@ -5,3 +5,8 @@ rvm:
 before_script:
   - cp config/database.travis.yml config/database.yml
   - psql -c 'create database travis_ci_test;' -U postgres
+
+env:
+  - aws_access_key_id = test
+  - aws_secret_access_key = test
+  - region = mordor
