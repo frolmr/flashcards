@@ -20,3 +20,6 @@
 
 #Ignore images
 /public/uploads
+
+#Ignore env variables file
+.env

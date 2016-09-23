@@ -35,7 +35,6 @@ class CardsController < ApplicationController
 
   def destroy
     @card.destroy
-    @card.remove_image!
     flash[:success] = "Карточка удалена"
     redirect_to cards_path
   end
