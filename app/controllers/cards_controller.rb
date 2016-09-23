@@ -35,6 +35,7 @@ class CardsController < ApplicationController
 
   def destroy
     @card.destroy
+    @card.remove_image!
     flash[:success] = "Карточка удалена"
     redirect_to cards_path
   end
@@ -42,7 +43,7 @@ class CardsController < ApplicationController
   private
 
   def card_params
-    params.require(:card).permit(:original_text, :translated_text)
+    params.require(:card).permit(:original_text, :translated_text, :image)
   end
 
   def get_card

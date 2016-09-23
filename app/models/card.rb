@@ -9,6 +9,8 @@ class Card < ActiveRecord::Base
 
   after_validation :compare_words
 
+  mount_uploader :image, ImageUploader
+
   def add_review_date
     self.review_date = Time.now + 3.days
   end

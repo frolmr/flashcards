@@ -17,3 +17,6 @@
 *.swp
 *.swo
 *~
+
+#Ignore images
+/public/uploads
