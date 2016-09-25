@@ -21,5 +21,5 @@
 #Ignore images
 /public/uploads
 
-#Ignore env variables file
-.env
+# Ignore application configuration
+/config/application.yml

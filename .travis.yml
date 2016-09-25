@@ -5,10 +5,3 @@ rvm:
 before_script:
   - cp config/database.travis.yml config/database.yml
   - psql -c 'create database travis_ci_test;' -U postgres
-
-deploy:
-  provider: s3
-  access_key_id: "TEST§"
-  secret_access_key: "TEST"
-  bucket: "TEST"
-  skip_cleanup: true
