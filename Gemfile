@@ -14,7 +14,7 @@ gem 'pg', '~> 0.18.4'
 gem 'simple_form', '~> 3.2', '>= 3.2.1'
 gem 'nokogiri', '~> 1.6', '>= 1.6.8'
 gem 'sorcery'
-gem 'carrierwave-aws'
+gem 'carrierwave'
 gem 'fog-aws'
 gem 'mini_magick'
 
