@@ -14,8 +14,9 @@ gem 'pg', '~> 0.18.4'
 gem 'simple_form', '~> 3.2', '>= 3.2.1'
 gem 'nokogiri', '~> 1.6', '>= 1.6.8'
 gem 'sorcery'
-gem 'carrierwave'
+gem 'carrierwave', "~> 0.10.0"
 gem 'mini_magick'
+gem 'fog-aws'
 
 group :development, :test do
   gem 'byebug'
