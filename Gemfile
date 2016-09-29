@@ -16,7 +16,7 @@ gem 'nokogiri', '~> 1.6', '>= 1.6.8'
 gem 'sorcery'
 gem 'carrierwave', "~> 0.10.0"
 gem 'mini_magick'
-gem 'fog-aws'
+gem 'fog', "~> 1.37.0"
 
 group :development, :test do
   gem 'byebug'
