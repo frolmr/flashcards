@@ -17,5 +17,4 @@ RSpec.describe Card, type: :model do
     expect(subject.card_check('HelLO mY. FrIenD?!')).to be true
     expect(subject.card_check('hello mu Friend')).to be false
   end
-
 end
