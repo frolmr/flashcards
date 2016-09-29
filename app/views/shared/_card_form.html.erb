@@ -1,5 +1,6 @@
 <% if @random_card %>
-<p>Как переводится данная фраза?</p>
+<p class="text-center">Как переводится данная фраза?</p>
+<p class="text-center"><%= image_tag(@random_card.image) %></p>
 <p class="text-center">
   <em><%= @random_card.translated_text %></em>
 </p>

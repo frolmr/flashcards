@@ -10,6 +10,11 @@ describe 'card checking', type: :feature do
     click_button "Войти"
   end
 
+  it 'should have image' do
+    visit root_path
+    expect(page).to have_css("img[src*='test_image.png']")
+  end
+
   it 'should approve the correct translation' do
     fill_in 'card_original_text', with: 'Hello'
     click_button 'Проверить'
