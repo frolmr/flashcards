@@ -1,4 +1,5 @@
 require 'rails_helper'
+require 'carrierwave/test/matchers'
 
 RSpec.describe Card, type: :model do
   subject { described_class.new(original_text: 'hello my Friend', translated_text: 'привет, мой друг') }
@@ -16,4 +17,5 @@ RSpec.describe Card, type: :model do
     expect(subject.card_check('HelLO mY. FrIenD?!')).to be true
     expect(subject.card_check('hello mu Friend')).to be false
   end
+
 end
