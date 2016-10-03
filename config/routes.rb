@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root 'static_page#home'
 
   resources :cards, except: [:show]
+  resources :decks, except: [:show]
 
   resources :users
   resources :user_sessions

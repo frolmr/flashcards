@@ -1,0 +1,20 @@
+<h3>Колоды:</h3>
+<br>
+<% @decks.each do |deck| %>
+  <% if deck.current %>
+    <p><strong>Текущая колода:</strong></p>
+  <% end %>
+  <p>
+    <h4><%= deck.name %></h4>
+    <%= link_to "Редактировать", edit_deck_path(deck.id) %>
+    <%= link_to "Удалить", deck, method: :delete %>
+  </p>
+  <p><em>Связанные карточки:</em></p>
+  <ul>
+    <% deck.cards.each do |card| %>
+      <li><%= card.original_text %> - <%= card.translated_text %></li>
+    <% end %>
+  </ul>
+  <br><br>
+<% end %>
+<%= link_to 'Добавить колоду', new_deck_path %>

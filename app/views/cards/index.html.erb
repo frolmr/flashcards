@@ -3,6 +3,7 @@
   <tr>
     <th>Слово</th>
     <th>Перевод</th>
+    <th>Колода</th>
     <th>Дата пересмотра</th>
     <th></th>
     <th></th>
@@ -11,9 +12,12 @@
     <tr>
       <td><%= card.original_text %></td>
       <td><%= card.translated_text %></td>
+      <td><%= card.deck.name %></td>
       <td><%= card.review_date.strftime("%d/%m/%Y") %></td>
       <td><%= link_to "Редактировать", edit_card_path(card.id) %></td>
       <td><%= link_to "Удалить", card, method: :delete %></td>
     </tr>
   <% end %>
 </table>
+<br><br>
+<%= link_to 'Добавить карточку', new_card_path %>

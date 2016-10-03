@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
   end
 
   has_many :cards, dependent: :destroy
+  has_many :decks, dependent: :destroy
   has_many :authentications, dependent: :destroy
   accepts_nested_attributes_for :authentications
 

@@ -1,5 +1,6 @@
 class Card < ActiveRecord::Base
   belongs_to :user
+  belongs_to :deck, required: true
 
   scope :expires, -> { where('review_date <= ?', Date.today) }
 

@@ -16,10 +16,10 @@
         <ul class="nav navbar-nav navbar-right">
           <% if logged_in? %>
           <li>
-            <%= link_to 'Все карточки', cards_path %>
+            <%= link_to 'Карточки', cards_path %>
           </li>
           <li>
-            <%= link_to 'Добавить карточку', new_card_path %>
+            <%= link_to 'Колоды', decks_path %>
           </li>
           <li>
             <%= link_to "Профиль", current_user %>
