@@ -3,3 +3,6 @@
   <%= f.input :password, label: 'Пароль' %>
   <%= f.submit 'Войти', class: 'btn btn-primary' %>
 <% end %>
+<%= link_to 'Login with Twitter', auth_at_provider_path(:provider => :twitter) %>
+<%= link_to 'Login with Facebook', auth_at_provider_path(:provider => :facebook) %>
+<%= link_to 'Login with VK', auth_at_provider_path(:provider => :vk) %>
