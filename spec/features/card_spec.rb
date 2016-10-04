@@ -1,12 +1,13 @@
 require 'rails_helper'
 
 describe 'card checking', type: :feature do
+  user = FactoryGirl.create(:user)
   let!(:card) { create(:card) }
 
   before(:each) do
     visit login_path
-    fill_in "Email", with: 'user@test.ru'
-    fill_in "Пароль", with: 'foobar'
+    fill_in "Email", with: user.email
+    fill_in "Пароль", with: user.password
     click_button "Войти"
   end
 
