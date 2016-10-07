@@ -10,7 +10,7 @@ describe "Deck", type: :feature do
     fill_in "Email", with: "test@test.com"
     fill_in "Пароль", with: "foobar"
     click_button "Войти"
-    visit "/decks/#{deck1.id}/edit"
+    visit edit_deck_path(deck1)
     check 'deck_current'
     click_button 'Сохранить колоду'
   end
