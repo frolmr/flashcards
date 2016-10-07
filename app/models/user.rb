@@ -18,7 +18,7 @@ class User < ActiveRecord::Base
   validates :password_confirmation, presence: true, if: -> { new_record? || changes[:crypted_password] }
 
   def find_current_deck
-    self.decks.find_by(current: true) || self
+    decks.find_by(current: true) || self
   end
 
   private
