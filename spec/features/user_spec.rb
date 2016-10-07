@@ -25,14 +25,14 @@ describe 'LogIn', type: :feature do
   before { visit login_path }
 
   it 'should authenticate with correct data' do
-    fill_in "Email", with: 'test@email.com'
-    fill_in "Пароль", with: 'foobar'
+    fill_in "Email", with: "test@test.com"
+    fill_in "Пароль", with: "foobar"
     click_button "Войти"
     expect(page).to have_content "Успешный вход"
   end
 
   it 'should NOT authenticate with incorrect data' do
-    fill_in "Email", with: 'test@email.com'
+    fill_in "Email", with: "test@test.com"
     fill_in "Пароль", with: 'barfoo'
     click_button "Войти"
     expect(page).to have_content "Не удалось войти"
@@ -43,8 +43,8 @@ describe 'LogOut', type: :feature do
   let!(:user) { create(:user) }
   before do
     visit login_path
-    fill_in "Email", with: 'test@email.com'
-    fill_in "Пароль", with: 'foobar'
+    fill_in "Email", with: "test@test.com"
+    fill_in "Пароль", with: "foobar"
     click_button "Войти"
   end
 

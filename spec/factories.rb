@@ -1,19 +1,18 @@
 FactoryGirl.define do
   factory :user do
-    email 'fuck@you.ru'
+    email "test@test.com"
     password 'foobar'
     password_confirmation 'foobar'
   end
 
   factory :deck do
-    user
-    name 'trash'
-    current true
+    sequence(:name) { |n| "test#{n}" }
+    current false
   end
 
   factory :card do
-    user
     deck
+    user
     original_text 'Hello'
     translated_text 'Привет'
     image { Rack::Test::UploadedFile.new(File.join(Rails.root, 'spec', 'support', 'images', 'test_image.png')) }

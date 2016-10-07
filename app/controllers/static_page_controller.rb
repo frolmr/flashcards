@@ -1,8 +1,6 @@
 class StaticPageController < ApplicationController
   def home
-    if current_user
-      @random_card = current_user.decks.find_by(current: true).cards.expires.sample || current_user.cards.sample
-    end
+    @random_card = current_user.find_current_deck.cards.sample if current_user
   end
 
   def check
