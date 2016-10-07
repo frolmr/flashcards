@@ -1,0 +1,5 @@
+<%= simple_form_for @deck do |f| %>
+  <%= f.input :name, label: 'Наименование колоды' %>
+  <%= f.input :current, label: 'Текущая' %>
+  <%= f.submit 'Сохранить колоду', class: 'btn btn-primary' %>
+<% end %>

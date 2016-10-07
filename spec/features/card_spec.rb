@@ -1,12 +1,12 @@
 require 'rails_helper'
 
 describe 'card checking', type: :feature do
-  let!(:card) { create(:card) }
+  let!(:card) { create :card }
 
   before(:each) do
     visit login_path
-    fill_in "Email", with: 'user@test.ru'
-    fill_in "Пароль", with: 'foobar'
+    fill_in "Email", with: "test@test.com"
+    fill_in "Пароль", with: "foobar"
     click_button "Войти"
   end
 

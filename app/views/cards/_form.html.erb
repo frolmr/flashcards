@@ -1,4 +1,5 @@
 <%= simple_form_for @card do |f| %>
+  <%= f.association :deck, collection: current_user.decks, prompt: "Choose a Deck", label: 'Колода' %>
   <%= f.input :original_text, label: 'Слово' %>
   <%= f.input :translated_text, label: 'Перевод' %>
   <%= f.input :image, as: :file %>
