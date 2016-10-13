@@ -25,13 +25,13 @@ RSpec.describe Card, type: :model do
     end
 
     it 'should move card to another box' do
-      expect{subject.increase_review_date}.to change{subject.box}.by(1)
+      expect { subject.increase_review_date }.to change { subject.box }.by(1)
     end
   end
 
   context 'has correct work of decrease_review_date method' do
     it 'should refresh the box number to one' do
-      expect{subject.decrease_review_date}.to change{subject.box}.to(1)
+      expect { subject.decrease_review_date }.to change { subject.box }.to(1)
     end
 
     it 'should set the review date to 12 hours after current time' do
@@ -41,12 +41,12 @@ RSpec.describe Card, type: :model do
 
   context 'has correct work of check_fail method' do
     it 'should increment amount of bad_tries' do
-      expect{subject.check_fail}.to change{subject.bad_tries}.from(0).to(1)
+      expect { subject.check_fail }.to change { subject.bad_tries }.from(0).to(1)
     end
 
     it 'should refresh the bad_tries to 0 after three bad tries' do
       subject.bad_tries = 2
-      expect{subject.check_fail}.to change{subject.bad_tries}.to(0)
+      expect { subject.check_fail }.to change { subject.bad_tries }.to(0)
     end
   end
 end
