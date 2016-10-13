@@ -4,8 +4,8 @@ require 'carrierwave/test/matchers'
 RSpec.describe Card, type: :model do
   subject { described_class.new(original_text: 'hello my Friend', translated_text: 'привет, мой друг') }
 
-  it 'method add_review_date works correctly' do
-    expect(subject.add_review_date.to_i).to eq(Time.now.to_i + 3.days)
+  it 'method set_review_date works correctly' do
+    expect(subject.set_review_date.to_i / 100).to eq(Time.now.to_i / 100)
   end
 
   it 'has correct word preprocessor' do
