@@ -6,8 +6,8 @@ class Card < ActiveRecord::Base
 
   before_validation :set_review_date, on: :create
 
-  validates :original_text, :translated_text, :box, :bad_tries, :review_date, :user, presence: true
-  validates :box, :bad_tries, numericality: true
+  validates :original_text, :translated_text, :review_group, :bad_tries, :review_date, :user, presence: true
+  validates :review_group, :bad_tries, numericality: true
 
   after_validation :compare_words
 
@@ -16,20 +16,20 @@ class Card < ActiveRecord::Base
   TODAY = Time.now
   REVIEW_PERIODS = [TODAY, TODAY + 12.hours, TODAY + 3.days, TODAY + 1.week, TODAY + 2.weeks, TODAY + 1.month].freeze
 
-  def increase_review_date
-    if box < REVIEW_PERIODS.size - 1
-      self.box += 1
+  def set_next_review_group
+    if review_group < REVIEW_PERIODS.size - 1
+      self.review_group += 1
     end
     set_review_date
   end
 
-  def decrease_review_date
-    self.box = 1
+  def drop_review_group
+    self.review_group = 1
     set_review_date
   end
 
   def set_review_date
-    self.review_date = REVIEW_PERIODS[self.box]
+    self.review_date = REVIEW_PERIODS[self.review_group]
   end
 
   def card_check(text)
@@ -37,7 +37,7 @@ class Card < ActiveRecord::Base
   end
 
   def success
-    increase_review_date
+    set_next_review_group
     save
   end
 
@@ -45,7 +45,7 @@ class Card < ActiveRecord::Base
     self.bad_tries += 1
     if self.bad_tries == 3
       self.bad_tries = 0
-      decrease_review_date
+      drop_review_group
     end
     save
   end

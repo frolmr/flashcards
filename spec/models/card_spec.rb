@@ -18,24 +18,23 @@ RSpec.describe Card, type: :model do
     expect(subject.card_check('hello mu Friend')).to be false
   end
 
-  context 'has correct work of increase_review_date method' do
+  context 'has correct work of set_next_review_group method' do
     it 'should increase the review date' do
-      expect(subject.increase_review_date.to_i).to be > Time.now.to_i
-      expect(subject.increase_review_date.to_i).to_not be <= Time.now.to_i
+      expect(subject.set_next_review_group.to_i).to be > Time.now.to_i
     end
 
-    it 'should move card to another box' do
-      expect { subject.increase_review_date }.to change { subject.box }.by(1)
+    it 'should move card to another review_group' do
+      expect { subject.set_next_review_group }.to change { subject.review_group }.by(1)
     end
   end
 
-  context 'has correct work of decrease_review_date method' do
-    it 'should refresh the box number to one' do
-      expect { subject.decrease_review_date }.to change { subject.box }.to(1)
+  context 'has correct work of drop_review_group method' do
+    it 'should refresh the review_group number to one' do
+      expect { subject.drop_review_group }.to change { subject.review_group }.to(1)
     end
 
     it 'should set the review date to 12 hours after current time' do
-      expect(subject.decrease_review_date.to_i / 100).to eq((Time.now + 12.hours).to_i / 100)
+      expect(subject.drop_review_group.to_i / 100).to eq((Time.now + 12.hours).to_i / 100)
     end
   end
 
