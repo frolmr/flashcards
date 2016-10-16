@@ -1,6 +1,8 @@
 class StaticPageController < ApplicationController
   def home
-    @random_card = current_user.find_current_deck.cards.sample if current_user
+    if current_user
+      @random_card = current_user.find_current_deck.cards.expires.sample || current_user.cards.sample
+    end
   end
 
   def check
@@ -9,6 +11,7 @@ class StaticPageController < ApplicationController
       @card.success
       flash[:success] = "Правильно!"
     else
+      @card.check_fail
       flash[:danger] = "Не правильно!"
     end
     redirect_to root_path
