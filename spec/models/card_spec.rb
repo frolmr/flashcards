@@ -14,8 +14,9 @@ RSpec.describe Card, type: :model do
   end
 
   it 'method card_check works correctly' do
-    expect(subject.card_check('HelLO mY. FrIenD?!')).to be true
-    expect(subject.card_check('hello mu Friend')).to be false
+    expect(subject.card_check('HelLO mY. FrIenD?!')).to eq(0)
+    expect(subject.card_check('HelLO mY. FrenD?!')).to eq(1)
+    expect(subject.card_check('hello mu Friend')).to_not eq(0)
   end
 
   context 'has correct work of set_next_review_group method' do

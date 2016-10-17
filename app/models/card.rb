@@ -33,7 +33,7 @@ class Card < ActiveRecord::Base
   end
 
   def card_check(text)
-    word_processing(original_text) == word_processing(text)
+    DamerauLevenshtein.distance(word_processing(original_text), word_processing(text))
   end
 
   def success
