@@ -21,6 +21,12 @@ class User < ActiveRecord::Base
     decks.find_by(current: true) || self
   end
 
+  def self.notify_pending_cards
+    User.joins(:cards).merge(Card.expires).uniq.each do |user|
+      CardsMailer.pending_cards_notification(user).deliver_now
+    end
+  end
+
   private
 
   def downcase_email

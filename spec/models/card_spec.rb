@@ -5,7 +5,7 @@ RSpec.describe Card, type: :model do
   subject { described_class.new(original_text: 'hello my Friend', translated_text: 'привет, мой друг') }
 
   it 'method set_review_date works correctly' do
-    expect(subject.set_review_date.to_i / 100).to eq(Time.now.to_i / 100)
+    expect(subject.set_review_date.to_i / 1000).to eq(Time.now.to_i / 1000)
   end
 
   it 'has correct word preprocessor' do
@@ -35,7 +35,7 @@ RSpec.describe Card, type: :model do
     end
 
     it 'should set the review date to 12 hours after current time' do
-      expect(subject.drop_review_group.to_i / 100).to eq((Time.now + 12.hours).to_i / 100)
+      expect(subject.drop_review_group.to_i / 1000).to eq((Time.now + 12.hours).to_i / 1000)
     end
   end
 
