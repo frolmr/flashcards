@@ -1,4 +1,6 @@
 class CardsController < ApplicationController
+  include CreateAction
+
   before_action :get_card, only: [:edit, :update, :destroy]
 
   def index
@@ -11,14 +13,7 @@ class CardsController < ApplicationController
 
   def create
     @card = current_user.cards.build(card_params)
-    @card.user_id = current_user.id
-    if @card.save
-      flash[:success] = "Новая карточка создана"
-      redirect_to cards_path
-    else
-      flash.now[:danger] = "Карточка не создана! Что-то пошло не так!"
-      render 'new'
-    end
+    create_new_item(@card)
   end
 
   def edit

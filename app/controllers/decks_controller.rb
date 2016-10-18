@@ -1,4 +1,6 @@
 class DecksController < ApplicationController
+  include CreateAction
+
   before_action :get_deck, only: [:edit, :update, :destroy]
 
   def index
@@ -11,14 +13,7 @@ class DecksController < ApplicationController
 
   def create
     @deck = current_user.decks.build(deck_params)
-    @deck.user_id = current_user.id
-    if @deck.save
-      flash[:success] = "Новая колода добавлена"
-      redirect_to decks_path
-    else
-      flash.now[:danger] = "Колода не создана! Что-то пошло не так!"
-      render 'new'
-    end
+    create_new_item(@deck)
   end
 
   def edit
