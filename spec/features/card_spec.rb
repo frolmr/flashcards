@@ -21,7 +21,13 @@ describe 'card checking', type: :feature do
     expect(page).to have_content 'Правильно!'
   end
 
-  it 'should NOT approve the correct translation' do
+  it 'should approve with misspelling' do
+    fill_in 'card_original_text', with: 'Helo'
+    click_button 'Проверить'
+    expect(page).to have_content "Вы, вероятно, опечатались?!"
+  end
+
+  it 'should NOT approve the incorrect translation' do
     fill_in 'card_original_text', with: 'Прюэт'
     click_button 'Проверить'
     expect(page).to have_content 'Не правильно!'
