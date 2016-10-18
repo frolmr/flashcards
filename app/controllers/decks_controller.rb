@@ -16,7 +16,7 @@ class DecksController < ApplicationController
       flash[:success] = "Новая колода добавлена"
       redirect_to decks_path
     else
-      flash.now[:danger] = "Что-то пошло не так!"
+      flash.now[:danger] = "Колода не создана! Что-то пошло не так!"
       render 'new'
     end
   end

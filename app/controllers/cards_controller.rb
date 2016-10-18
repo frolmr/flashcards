@@ -16,7 +16,7 @@ class CardsController < ApplicationController
       flash[:success] = "Новая карточка создана"
       redirect_to cards_path
     else
-      flash.now[:danger] = "Что-то пошло не так!"
+      flash.now[:danger] = "Карточка не создана! Что-то пошло не так!"
       render 'new'
     end
   end
