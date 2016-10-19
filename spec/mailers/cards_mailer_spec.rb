@@ -1,14 +1,11 @@
 require "rails_helper"
 
 RSpec.describe CardsMailer, type: :mailer do
-  let(:mail) { CardsMailer.pending_cards_notification(@user) }
-
-  before(:each) do
-    @user = create(:user)
-  end
+  let(:mail) { CardsMailer.pending_cards_notification(user) }
+  let(:user) { create :user }
 
   it 'should send email to correct email address' do
-    expect(mail.to).to eq([@user.email])
+    expect(mail.to).to eq([user.email])
   end
 
   it 'should send email with correct subject' do
