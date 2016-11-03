@@ -53,6 +53,6 @@ class UsersController < ApplicationController
   end
 
   def update_locale
-    session[:locale] = I18n.locale = @user.locale
+    cookies[:locale] = I18n.locale = @user.locale
   end
 end
