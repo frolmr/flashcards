@@ -11,10 +11,11 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       auto_login(@user)
-      flash[:success] = "Добавлен новый пользователь"
+      update_locale
+      flash[:success] = t('user_create_success_flash')
       redirect_to root_path
     else
-      flash.now[:danger] = "Что-то пошло не так!"
+      flash.now[:danger] = t('user_create_danger_flash')
       render 'new'
     end
   end
@@ -28,7 +29,8 @@ class UsersController < ApplicationController
 
   def update
     if @user.update_attributes(user_params)
-      flash[:success] = "Профиль успешно обновлен"
+      update_locale
+      flash[:success] = t('user_update_flash')
       redirect_to user_path
     else
       render 'edit'
@@ -38,7 +40,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:email, :password, :password_confirmation)
+    params.require(:user).permit(:email, :password, :password_confirmation, :locale)
   end
 
   def get_user
@@ -48,5 +50,9 @@ class UsersController < ApplicationController
   def correct_user
     @user = User.find(params[:id])
     redirect_to(root_url) unless @user == current_user
+  end
+
+  def update_locale
+    session[:locale] = I18n.locale = @user.locale
   end
 end

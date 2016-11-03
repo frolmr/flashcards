@@ -1,10 +1,10 @@
 <table class="table table-striped">
-  <caption>Список карточек</caption>
+  <caption><%= t('cards_list') %></caption>
   <tr>
-    <th>Слово</th>
-    <th>Перевод</th>
-    <th>Колода</th>
-    <th>Дата пересмотра</th>
+    <th><%= t('cards_list_word') %></th>
+    <th><%= t('cards_list_translation') %></th>
+    <th><%= t('cards_list_deck') %></th>
+    <th><%= t('cards_list_review') %></th>
     <th></th>
     <th></th>
   </tr>
@@ -14,10 +14,10 @@
       <td><%= card.translated_text %></td>
       <td><%= card.deck.name %></td>
       <td><%= card.review_date.strftime("%d/%m/%Y") %></td>
-      <td><%= link_to "Редактировать", edit_card_path(card.id) %></td>
-      <td><%= link_to "Удалить", card, method: :delete %></td>
+      <td><%= link_to t('edit_link_title'), edit_card_path(card.id) %></td>
+      <td><%= link_to t('delete_link_title'), card, method: :delete %></td>
     </tr>
   <% end %>
 </table>
 <br><br>
-<%= link_to 'Добавить карточку', new_card_path %>
+<%= link_to t('add_card_link') , new_card_path %>

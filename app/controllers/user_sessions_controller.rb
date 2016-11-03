@@ -5,9 +5,10 @@ class UserSessionsController < ApplicationController
 
   def create
     if @user = login(params[:session][:email], params[:session][:password])
-      redirect_back_or_to(root_path, success: 'Успешный вход')
+      cookies[:locale] = I18n.locale = @user.locale
+      redirect_back_or_to(root_path, success: t('login_successfull_flash'))
     else
-      flash.now[:danger] = 'Не удалось войти'
+      flash[:danger] = t('login_unsuccessfull_flash')
       render action: 'new'
     end
   end
@@ -15,6 +16,6 @@ class UserSessionsController < ApplicationController
   def destroy
     logout
     redirect_to root_path
-    flash[:success] = 'Успешный выход'
+    flash[:success] = t('logout_successfull_flash')
   end
 end

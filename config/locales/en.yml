@@ -1,23 +1,77 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
 en:
-  hello: "Hello world"
+  app_title: "Flashcarder"
+  profile: "Profile"
+  log_in: "Log in"
+  log_out: "Log out"
+  register: "Register"
+  decks: "Decks"
+  cards: "Cards"
+  main_question: "How to translate this word/phrase?"
+  slogan: "The first in the World useful flashcars manager. That's it!"
+  check_button_title: "Check"
+  translate_field_title: "Translation"
+  edit_link_title: "Edit"
+  delete_link_title: "Delete"
+
+  user_profile: "Profile"
+  user_profile_email: "Your email:"
+  user_profile_language: "Selected language:"
+
+  cards_list: "Cards list"
+  cards_list_word: "Word"
+  cards_list_translation: "Translation"
+  cards_list_deck: "Deck"
+  cards_list_review: "Review date"
+  add_card_link: "Add card"
+
+  decks_list: "Decks:"
+  decks_list_current: "Current deck:"
+  decks_list_cards: "Related cards:"
+  add_deck_link: "Add deck"
+
+  authorization_danger_flash: "Please authorize first"
+  card_update_flash: "Card updated succeffully"
+  card_delete_flash: "Card deleted"
+  deck_update_flash: "Deck updated succeffully"
+  deck_delete_flash: "Deck deleted"
+  user_create_success_flash: "New user was created"
+  user_create_danger_flash: "Something went wrong!"
+  user_update_flash: "Profile updated successfully"
+  login_successfull_flash: "Successfull log in!"
+  login_unsuccessfull_flash: "Failed to log in"
+  logout_successfull_flash: "Successfull log out"
+  check_successfull_flash: "Correct!"
+  check_unsuccessfull_flash: "Incorrect!"
+  check_warning_flash: "The hidden word was: #{translated_text}, translates as: #{original_text}, and you entered: #{card_original_text}. You probably mistyped?!"
+
+  helpers:
+      submit:
+        user:
+          create: "Create profile"
+          update: "Save profile changes"
+        card:
+          create: "Create card"
+          update: "Save card changes"
+        deck:
+          create: "Create deck"
+          update: "Save deck changes"
+
+  simple_form:
+    labels:
+      user:
+        email: "Email"
+        password: "Password"
+        password_confirmation: "Password confirmation"
+        locale: "Language"
+      card:
+        deck: "Deck"
+        original_text: "Original text"
+        translated_text: "Translated text"
+        image: "Choose image"
+        remote_image_url: "Paste url for remote image"
+      deck:
+        name: "Name"
+        current: "Current"
+      session:
+        email: "Email"
+        password: "Password"

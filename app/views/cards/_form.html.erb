@@ -1,9 +1,8 @@
 <%= simple_form_for @card do |f| %>
-  <%= f.association :deck, collection: current_user.decks, prompt: "Choose a Deck", label: 'Колода' %>
-  <%= f.input :original_text, label: 'Слово' %>
-  <%= f.input :translated_text, label: 'Перевод' %>
-  <%= f.input :review_date, as: :date, label: 'Дата пересмотра' %>
+  <%= f.association :deck, collection: current_user.decks, prompt: "Choose a Deck" %>
+  <%= f.input :original_text%>
+  <%= f.input :translated_text %>
   <%= f.input :image, as: :file %>
-  <%= f.input :remote_image_url, label: 'Ссылка на изображение' %>
-  <%= f.submit 'Сохранить карточку', class: 'btn btn-primary' %>
+  <%= f.input :remote_image_url %>
+  <%= f.submit class: 'btn btn-primary' %>
 <% end %>

@@ -7,23 +7,23 @@ describe "Deck", type: :feature do
 
   before(:each) do
     visit login_path
-    fill_in "Email", with: "test@test.com"
-    fill_in "Пароль", with: "foobar"
-    click_button "Войти"
+    fill_in I18n.t('simple_form.labels.user.email'), with: "test@test.com"
+    fill_in I18n.t('simple_form.labels.user.password'), with: "foobar"
+    click_button I18n.t('log_in')
     visit edit_deck_path(deck1)
     check 'deck_current'
-    click_button 'Сохранить колоду'
+    click_button I18n.t('helpers.submit.deck.update')
   end
 
   it 'should save successful' do
-    expect(page).to have_content 'Колода успешно обновлена'
+    expect(page).to have_content I18n.t('deck_update_flash')
   end
 
   it 'deck1 should become current' do
-    expect(page).to have_content "Текущая колода: #{deck1.name}"
+    expect(page).to have_content I18n.t('decks_list_current') + " #{deck1.name}"
   end
 
   it 'deck2 should NOT become current' do
-    expect(page).not_to have_content "Текущая колода: #{deck2.name}"
+    expect(page).not_to have_content I18n.t('decks_list_current') + " #{deck2.name}"
   end
 end

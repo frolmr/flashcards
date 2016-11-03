@@ -1,0 +1,77 @@
+ru:
+  app_title: "Флэшкарточкер"
+  profile: "Профиль"
+  log_in: "Войти"
+  log_out: "Выйти"
+  register: "Регистрация"
+  decks: "Колоды"
+  cards: "Карточки"
+  main_question: "Как переводится данные слово/фраза?"
+  slogan: "Первый в мире удобный менеджер флеш-карточек. Именно так."
+  check_button_title: "Проверить"
+  translate_field_title: "Перевод"
+  edit_link_title: "Редактировать"
+  delete_link_title: "Удалить"
+
+  user_profile: "Учетная запись"
+  user_profile_email: "Ваш email:"
+  user_profile_language: "Выбранный язык:"
+
+  cards_list: "Список карточек"
+  cards_list_word: "Слово"
+  cards_list_translation: "Перевод"
+  cards_list_deck: "Колода"
+  cards_list_review: "Дата пересмотра"
+  add_card_link: "Добавить карточку"
+
+  decks_list: "Колоды:"
+  decks_list_current: "Текущая колода:"
+  decks_list_cards: "Связанные карточки:"
+  add_deck_link: "Добавить колоду"
+
+  authorization_danger_flash: "Пожалуйста, сначала авторизуйтесь"
+  card_update_flash: "Карточка успешно обновлена"
+  card_delete_flash: "Карточка удалена"
+  deck_update_flash: "Колода успешно обновлена"
+  deck_delete_flash: "Колода удалена"
+  user_create_success_flash: "Добавлен новый пользователь"
+  user_create_danger_flash: "Что-то пошло не так!"
+  user_update_flash: "Профиль успешно обновлен"
+  login_successfull_flash: "Успешный вход"
+  login_unsuccessfull_flash: "Не удалось войти"
+  logout_successfull_flash: "Успешный выход"
+  check_successfull_flash: "Правильно!"
+  check_unsuccessfull_flash: "Не правильно!"
+  check_warning_flash: "Загаданное слово: #{translated_text}, переводится как #{original_text}, а вы ввели: #{card_original_text}. Вы, вероятно, опечатались?!"
+
+  helpers:
+      submit:
+        user:
+          create: "Создать профиль"
+          update: "Сохранить изменения пользователя"
+        card:
+          create: "Создать карточку"
+          update: "Сохранить изменения карточки"
+        deck:
+          create: "Создать колоду"
+          update: "Сохранить изменения колоды"
+
+  simple_form:
+    labels:
+      user:
+        email: "Email"
+        password: "Пароль"
+        password_confirmation: "Подтверждение пароля"
+        locale: "Язык"
+      card:
+        deck: "Колода"
+        original_text: "Исходный текст"
+        translated_text: "Переведенный текст"
+        image: "Выберете изображение"
+        remote_image_url: "Вставьте ссылку на изображение"
+      deck:
+        name: "Наименование"
+        current: "Текущая"
+      session:
+        email: "Email"
+        password: "Пароль"
