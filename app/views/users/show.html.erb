@@ -1,7 +1,7 @@
-<h1><%= t('user_profile') %></h1>
+<h1><%= t('.title') %></h1>
 
-<p><%= t('user_profile_email') %> <strong><%= @user.email %></strong></p>
-<p><%= t('user_profile_language') %> <strong><%= @user.locale %></strong></p>
+<p><%= t('.email') %> <strong><%= @user.email %></strong></p>
+<p><%= t('.language') %> <strong><%= @user.locale %></strong></p>
 <br>
 <br>
-<%= link_to t('edit_link_title'), edit_user_path(current_user.id) %>
+<%= link_to t('.edit'), edit_user_path(current_user.id) %>

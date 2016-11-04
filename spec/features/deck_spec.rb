@@ -16,14 +16,14 @@ describe "Deck", type: :feature do
   end
 
   it 'should save successful' do
-    expect(page).to have_content I18n.t('deck_update_flash')
+    expect(page).to have_content I18n.t('decks.update.success')
   end
 
   it 'deck1 should become current' do
-    expect(page).to have_content I18n.t('decks_list_current') + " #{deck1.name}"
+    expect(page).to have_content I18n.t('decks.index.current') + " #{deck1.name}"
   end
 
   it 'deck2 should NOT become current' do
-    expect(page).not_to have_content I18n.t('decks_list_current') + " #{deck2.name}"
+    expect(page).not_to have_content I18n.t('decks.index.current') + " #{deck2.name}"
   end
 end

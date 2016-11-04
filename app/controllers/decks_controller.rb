@@ -21,7 +21,7 @@ class DecksController < ApplicationController
 
   def update
     if @deck.update_attributes(deck_params)
-      flash[:success] = t('deck_update_flash')
+      flash[:success] = t('.success')
       redirect_to decks_path
     else
       render 'edit'
@@ -30,7 +30,7 @@ class DecksController < ApplicationController
 
   def destroy
     @deck.destroy
-    flash[:success] = t('deck_delete_flash')
+    flash[:success] = t('.success')
     redirect_to decks_path
   end
 

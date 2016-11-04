@@ -9,13 +9,13 @@ class StaticPageController < ApplicationController
     @card = Card.find(params[:card][:card_id])
     if @card.card_check(params[:card][:original_text]).zero?
       @card.success
-      flash[:success] = t('check_successfull_flash')
+      flash[:success] = t('.success')
     elsif @card.card_check(params[:card][:original_text]) == 1
       @card.success
-      flash[:warning] = t('check_warning_flash', translated_text: @card.translated_text, original_text: @card.original_text, card_original_text: params[:card][:original_text])
+      flash[:warning] = t('.warning', translated_text: @card.translated_text, original_text: @card.original_text, card_original_text: params[:card][:original_text])
     else
       @card.check_fail
-      flash[:danger] = t('check_unsuccessfull_flash')
+      flash[:danger] = t('.danger')
     end
     redirect_to root_path
   end

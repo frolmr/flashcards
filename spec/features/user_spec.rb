@@ -8,7 +8,7 @@ describe "SignUp", type: :feature do
     fill_in I18n.t('simple_form.labels.user.password'), with: 'foobar'
     fill_in I18n.t('simple_form.labels.user.password_confirmation'), with: 'foobar'
     click_button I18n.t('helpers.submit.user.create')
-    expect(page).to have_content I18n.t("user_create_success_flash")
+    expect(page).to have_content I18n.t("users.create.success")
   end
 
   it 'should NOT register user with incorrect data' do
@@ -16,7 +16,7 @@ describe "SignUp", type: :feature do
     fill_in I18n.t('simple_form.labels.user.password'), with: 'foobar'
     fill_in I18n.t('simple_form.labels.user.password_confirmation'), with: 'barfoo'
     click_button I18n.t('helpers.submit.user.create')
-    expect(page).to have_content I18n.t("user_create_danger_flash")
+    expect(page).to have_content I18n.t("users.create.danger")
   end
 end
 
@@ -28,14 +28,14 @@ describe 'LogIn', type: :feature do
     fill_in I18n.t('simple_form.labels.user.email'), with: "test@test.com"
     fill_in I18n.t('simple_form.labels.user.password'), with: "foobar"
     click_button I18n.t("log_in")
-    expect(page).to have_content I18n.t("login_successfull_flash")
+    expect(page).to have_content I18n.t("user_sessions.create.success")
   end
 
   it 'should NOT authenticate with incorrect data' do
     fill_in I18n.t('simple_form.labels.user.email'), with: "test@test.com"
     fill_in I18n.t('simple_form.labels.user.password'), with: 'barfoo'
     click_button I18n.t("log_in")
-    expect(page).to have_content I18n.t("login_unsuccessfull_flash")
+    expect(page).to have_content I18n.t("user_sessions.create.danger")
   end
 end
 
@@ -50,6 +50,6 @@ describe 'LogOut', type: :feature do
 
   it 'should logout by clicking link' do
     click_link I18n.t("log_out")
-    expect(page).to have_content I18n.t("logout_successfull_flash")
+    expect(page).to have_content I18n.t("user_sessions.destroy.success")
   end
 end

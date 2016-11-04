@@ -26,20 +26,20 @@
         <ul class="nav navbar-nav navbar-right">
           <% if logged_in? %>
           <li>
-            <%= link_to t('cards'), cards_path %>
+            <%= link_to t('cards_link'), cards_path %>
           </li>
           <li>
-            <%= link_to t('decks'), decks_path %>
+            <%= link_to t('decks_link'), decks_path %>
           </li>
           <li>
-            <%= link_to t('profile'), current_user %>
+            <%= link_to t('profile_link'), current_user %>
           </li>
           <li>
             <%= link_to t('log_out'), :logout, method: :post %>
           </li>
           <% else %>
           <li>
-            <%= link_to t('register'), new_user_path %>
+            <%= link_to t('register_link'), new_user_path %>
           </li>
           <li>
             <%= link_to t('log_in'), :login %>

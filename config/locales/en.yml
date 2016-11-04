@@ -1,48 +1,69 @@
 en:
   app_title: "Flashcarder"
-  profile: "Profile"
+  profile_link: "Profile"
   log_in: "Log in"
   log_out: "Log out"
-  register: "Register"
-  decks: "Decks"
-  cards: "Cards"
+  register_link: "Register"
+  decks_link: "Decks"
+  cards_link: "Cards"
   main_question: "How to translate this word/phrase?"
   slogan: "The first in the World useful flashcars manager. That's it!"
   check_button_title: "Check"
   translate_field_title: "Translation"
-  edit_link_title: "Edit"
-  delete_link_title: "Delete"
+  authorization_danger: "Please authorize first"
 
-  user_profile: "Profile"
-  user_profile_email: "Your email:"
-  user_profile_language: "Selected language:"
+  users:
+    show:
+      title: "Profile"
+      email: "Your email:"
+      language: "Selected language:"
+      edit: "Edit profile"
+    create:
+      success: "New user was created"
+      danger: "Something went wrong!"
+    update:
+      success: "Profile updated successfully"
 
-  cards_list: "Cards list"
-  cards_list_word: "Word"
-  cards_list_translation: "Translation"
-  cards_list_deck: "Deck"
-  cards_list_review: "Review date"
-  add_card_link: "Add card"
+  cards:
+    index:
+      title: "Cards list"
+      word: "Word"
+      translation: "Translation"
+      deck: "Deck"
+      review_date: "Review date"
+      edit_link: "Edit card"
+      delete_link: "Delete card"
+      add_link: "Add card"
+    update:
+      success: "Card updated succeffully"
+    destroy:
+      success: "Card deleted"
 
-  decks_list: "Decks:"
-  decks_list_current: "Current deck:"
-  decks_list_cards: "Related cards:"
-  add_deck_link: "Add deck"
+  decks:
+    index:
+      title: "Decks:"
+      current: "Current deck:"
+      related_cards: "Related cards:"
+      edit_link: "Edit deck"
+      delete_link: "Delete deck"
+      add_link: "Add deck"
+    update:
+      success: "Deck updated succeffully"
+    destroy:
+      success: "Deck deleted"
 
-  authorization_danger_flash: "Please authorize first"
-  card_update_flash: "Card updated succeffully"
-  card_delete_flash: "Card deleted"
-  deck_update_flash: "Deck updated succeffully"
-  deck_delete_flash: "Deck deleted"
-  user_create_success_flash: "New user was created"
-  user_create_danger_flash: "Something went wrong!"
-  user_update_flash: "Profile updated successfully"
-  login_successfull_flash: "Successfull log in!"
-  login_unsuccessfull_flash: "Failed to log in"
-  logout_successfull_flash: "Successfull log out"
-  check_successfull_flash: "Correct!"
-  check_unsuccessfull_flash: "Incorrect!"
-  check_warning_flash: "The hidden word was: #{translated_text}, translates as: #{original_text}, and you entered: #{card_original_text}. You probably mistyped?!"
+  user_sessions:
+    create:
+      success: "Successfull log in!"
+      danger: "Failed to log in"
+    destroy:
+      success: "Successfull log out"
+
+  static_page:
+    check:
+      success: "Correct!"
+      warning: "The hidden word was: %{translated_text}, translates as: %{original_text}, and you entered: %{card_original_text}. You probably mistyped?!"
+      danger: "Incorrect!"
 
   helpers:
       submit:

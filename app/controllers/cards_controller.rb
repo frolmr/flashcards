@@ -21,7 +21,7 @@ class CardsController < ApplicationController
 
   def update
     if @card.update_attributes(card_params)
-      flash[:success] = t('card_update_flash')
+      flash[:success] = t('.success')
       redirect_to cards_path
     else
       render 'edit'
@@ -30,7 +30,7 @@ class CardsController < ApplicationController
 
   def destroy
     @card.destroy
-    flash[:success] = t('card_delete_flash')
+    flash[:success] = t('.success')
     redirect_to cards_path
   end
 

@@ -12,10 +12,10 @@ class UsersController < ApplicationController
     if @user.save
       auto_login(@user)
       update_locale
-      flash[:success] = t('user_create_success_flash')
+      flash[:success] = t('.success')
       redirect_to root_path
     else
-      flash.now[:danger] = t('user_create_danger_flash')
+      flash.now[:danger] = t('.danger')
       render 'new'
     end
   end
@@ -30,7 +30,7 @@ class UsersController < ApplicationController
   def update
     if @user.update_attributes(user_params)
       update_locale
-      flash[:success] = t('user_update_flash')
+      flash[:success] = t('.success')
       redirect_to user_path
     else
       render 'edit'
