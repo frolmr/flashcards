@@ -20,6 +20,7 @@ gem 'fog-aws'
 gem 'rb-readline'
 gem 'damerau-levenshtein'
 gem 'whenever', require: false
+gem 'http_accept_language'
 
 group :development, :test do
   gem 'byebug'

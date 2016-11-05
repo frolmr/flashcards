@@ -1,0 +1,98 @@
+ru:
+  app_title: "Флэшкарточкер"
+  profile_link: "Профиль"
+  log_in: "Войти"
+  log_out: "Выйти"
+  register_link: "Регистрация"
+  decks_link: "Колоды"
+  cards_link: "Карточки"
+  main_question: "Как переводится данные слово/фраза?"
+  slogan: "Первый в мире удобный менеджер флеш-карточек. Именно так."
+  check_button_title: "Проверить"
+  translate_field_title: "Перевод"
+  authorization_danger: "Пожалуйста, сначала авторизуйтесь"
+
+  users:
+    show:
+      title: "Учетная запись"
+      email: "Ваш email:"
+      language: "Выбранный язык:"
+      edit: "Редактировать профиль"
+    create:
+      success: "Добавлен новый пользователь"
+      danger: "Что-то пошло не так!"
+    update:
+      success: "Профиль успешно обновлен"
+
+  cards:
+    index:
+      title: "Список карточек"
+      word: "Слово"
+      translation: "Перевод"
+      deck: "Колода"
+      review_date: "Дата пересмотра"
+      edit_link: "Редактировать карточку"
+      delete_link: "Удалить карточку"
+      add_link: "Добавить карточку"
+    update:
+      success: "Карточка успешно обновлена"
+    destroy:
+      success: "Карточка удалена"
+
+  decks:
+    index:
+      title: "Колоды:"
+      current: "Текущая колода:"
+      related_cards: "Связанные карточки:"
+      edit_link: "Редактировать колоду"
+      delete_link: "Удалить колоду"
+      add_link: "Добавить колоду"
+    update:
+      success: "Колода успешно обновлена"
+    destroy:
+      success: "Колода удалена"
+
+  user_sessions:
+    create:
+      success: "Успешный вход"
+      danger: "Не удалось войти"
+    destroy:
+      success: "Успешный выход"
+
+  static_page:
+    check:
+      success: "Правильно!"
+      warning: "Загаданное слово: %{translated_text}, переводится как %{original_text}, а вы ввели: %{card_original_text}. Вы, вероятно, опечатались?!"
+      danger: "Не правильно!"
+
+  helpers:
+      submit:
+        user:
+          create: "Создать профиль"
+          update: "Сохранить изменения пользователя"
+        card:
+          create: "Создать карточку"
+          update: "Сохранить изменения карточки"
+        deck:
+          create: "Создать колоду"
+          update: "Сохранить изменения колоды"
+
+  simple_form:
+    labels:
+      user:
+        email: "Email"
+        password: "Пароль"
+        password_confirmation: "Подтверждение пароля"
+        locale: "Язык"
+      card:
+        deck: "Колода"
+        original_text: "Исходный текст"
+        translated_text: "Переведенный текст"
+        image: "Выберете изображение"
+        remote_image_url: "Вставьте ссылку на изображение"
+      deck:
+        name: "Наименование"
+        current: "Текущая"
+      session:
+        email: "Email"
+        password: "Пароль"

@@ -1,15 +1,15 @@
-<h3>Колоды:</h3>
+<h3><%= t('.title') %></h3>
 <br>
 <% @decks.each do |deck| %>
   <% if deck.current %>
-    <p><strong>Текущая колода:</strong></p>
+    <p><strong><%= t('.current') %></strong></p>
   <% end %>
   <p>
     <h4><%= deck.name %></h4>
-    <%= link_to "Редактировать", edit_deck_path(deck.id) %>
-    <%= link_to "Удалить", deck, method: :delete %>
+    <%= link_to t('.edit_link'), edit_deck_path(deck.id) %>
+    <%= link_to t('.delete_link'), deck, method: :delete %>
   </p>
-  <p><em>Связанные карточки:</em></p>
+  <p><em><%= t('.related_cards') %></em></p>
   <ul>
     <% deck.cards.each do |card| %>
       <li><%= card.original_text %> - <%= card.translated_text %></li>
@@ -17,4 +17,4 @@
   </ul>
   <br><br>
 <% end %>
-<%= link_to 'Добавить колоду', new_deck_path %>
+<%= link_to t('.add_link'), new_deck_path %>

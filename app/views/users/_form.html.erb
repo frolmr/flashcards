@@ -1,6 +1,7 @@
 <%= simple_form_for @user do |f| %>
-  <%= f.input :email, label: 'Email' %>
-  <%= f.input :password, label: 'Пароль' %>
-  <%= f.input :password_confirmation, label: 'Подтверждение пароля' %>
-  <%= f.submit 'Сохранить', class: 'btn btn-primary' %>
+  <%= f.input :email %>
+  <%= f.input :password %>
+  <%= f.input :password_confirmation %>
+  <%= f.input :locale, collection: [['English', 'en'] , ['Русский', 'ru']], selected: @user.locale %>
+  <%= f.submit class: 'btn btn-primary' %>
 <% end %>

@@ -4,19 +4,19 @@ describe "SignUp", type: :feature do
   before { visit 'users/new' }
 
   it 'should register user with correct data' do
-    fill_in "Email", with: 'foo@foo.net'
-    fill_in "Пароль", with: 'foobar'
-    fill_in "Подтверждение пароля", with: 'foobar'
-    click_button "Сохранить"
-    expect(page).to have_content "Добавлен новый пользователь"
+    fill_in I18n.t('simple_form.labels.user.email'), with: 'foo@foo.net'
+    fill_in I18n.t('simple_form.labels.user.password'), with: 'foobar'
+    fill_in I18n.t('simple_form.labels.user.password_confirmation'), with: 'foobar'
+    click_button I18n.t('helpers.submit.user.create')
+    expect(page).to have_content I18n.t("users.create.success")
   end
 
   it 'should NOT register user with incorrect data' do
-    fill_in "Email", with: 'foo@foo.net'
-    fill_in "Пароль", with: 'foobar'
-    fill_in "Подтверждение пароля", with: 'barfoo'
-    click_button "Сохранить"
-    expect(page).to have_content "Что-то пошло не так!"
+    fill_in I18n.t('simple_form.labels.user.email'), with: 'foo@foo.net'
+    fill_in I18n.t('simple_form.labels.user.password'), with: 'foobar'
+    fill_in I18n.t('simple_form.labels.user.password_confirmation'), with: 'barfoo'
+    click_button I18n.t('helpers.submit.user.create')
+    expect(page).to have_content I18n.t("users.create.danger")
   end
 end
 
@@ -25,17 +25,17 @@ describe 'LogIn', type: :feature do
   before { visit login_path }
 
   it 'should authenticate with correct data' do
-    fill_in "Email", with: "test@test.com"
-    fill_in "Пароль", with: "foobar"
-    click_button "Войти"
-    expect(page).to have_content "Успешный вход"
+    fill_in I18n.t('simple_form.labels.user.email'), with: "test@test.com"
+    fill_in I18n.t('simple_form.labels.user.password'), with: "foobar"
+    click_button I18n.t("log_in")
+    expect(page).to have_content I18n.t("user_sessions.create.success")
   end
 
   it 'should NOT authenticate with incorrect data' do
-    fill_in "Email", with: "test@test.com"
-    fill_in "Пароль", with: 'barfoo'
-    click_button "Войти"
-    expect(page).to have_content "Не удалось войти"
+    fill_in I18n.t('simple_form.labels.user.email'), with: "test@test.com"
+    fill_in I18n.t('simple_form.labels.user.password'), with: 'barfoo'
+    click_button I18n.t("log_in")
+    expect(page).to have_content I18n.t("user_sessions.create.danger")
   end
 end
 
@@ -43,13 +43,13 @@ describe 'LogOut', type: :feature do
   let!(:user) { create(:user) }
   before do
     visit login_path
-    fill_in "Email", with: "test@test.com"
-    fill_in "Пароль", with: "foobar"
-    click_button "Войти"
+    fill_in I18n.t('simple_form.labels.user.email'), with: "test@test.com"
+    fill_in I18n.t('simple_form.labels.user.password'), with: "foobar"
+    click_button I18n.t("log_in")
   end
 
   it 'should logout by clicking link' do
-    click_link "Выйти"
-    expect(page).to have_content "Успешный выход"
+    click_link I18n.t("log_out")
+    expect(page).to have_content I18n.t("user_sessions.destroy.success")
   end
 end

@@ -9,13 +9,13 @@ class StaticPageController < ApplicationController
     @card = Card.find(params[:card][:card_id])
     if @card.card_check(params[:card][:original_text]).zero?
       @card.success
-      flash[:success] = "Правильно!"
+      flash[:success] = t('.success')
     elsif @card.card_check(params[:card][:original_text]) == 1
       @card.success
-      flash[:warning] = "Загаданное слово: #{@card.translated_text}, переводится как #{@card.original_text}, а вы ввели: #{params[:card][:original_text]}. Вы, вероятно, опечатались?!"
+      flash[:warning] = t('.warning', translated_text: @card.translated_text, original_text: @card.original_text, card_original_text: params[:card][:original_text])
     else
       @card.check_fail
-      flash[:danger] = "Не правильно!"
+      flash[:danger] = t('.danger')
     end
     redirect_to root_path
   end

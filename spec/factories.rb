@@ -3,6 +3,7 @@ FactoryGirl.define do
     email "test@test.com"
     password 'foobar'
     password_confirmation 'foobar'
+    locale 'ru'
   end
 
   factory :deck do

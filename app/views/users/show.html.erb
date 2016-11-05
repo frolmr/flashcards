@@ -1,6 +1,7 @@
-<h1>Учетная запись</h1>
+<h1><%= t('.title') %></h1>
 
-<p>Ваш email: <strong><%= @user.email %></strong></p>
+<p><%= t('.email') %> <strong><%= @user.email %></strong></p>
+<p><%= t('.language') %> <strong><%= @user.locale %></strong></p>
 <br>
 <br>
-<%= link_to "Редактировать", edit_user_path(current_user.id) %>
+<%= link_to t('.edit'), edit_user_path(current_user.id) %>

@@ -1,23 +1,98 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
 en:
-  hello: "Hello world"
+  app_title: "Flashcarder"
+  profile_link: "Profile"
+  log_in: "Log in"
+  log_out: "Log out"
+  register_link: "Register"
+  decks_link: "Decks"
+  cards_link: "Cards"
+  main_question: "How to translate this word/phrase?"
+  slogan: "The first in the World useful flashcars manager. That's it!"
+  check_button_title: "Check"
+  translate_field_title: "Translation"
+  authorization_danger: "Please authorize first"
+
+  users:
+    show:
+      title: "Profile"
+      email: "Your email:"
+      language: "Selected language:"
+      edit: "Edit profile"
+    create:
+      success: "New user was created"
+      danger: "Something went wrong!"
+    update:
+      success: "Profile updated successfully"
+
+  cards:
+    index:
+      title: "Cards list"
+      word: "Word"
+      translation: "Translation"
+      deck: "Deck"
+      review_date: "Review date"
+      edit_link: "Edit card"
+      delete_link: "Delete card"
+      add_link: "Add card"
+    update:
+      success: "Card updated succeffully"
+    destroy:
+      success: "Card deleted"
+
+  decks:
+    index:
+      title: "Decks:"
+      current: "Current deck:"
+      related_cards: "Related cards:"
+      edit_link: "Edit deck"
+      delete_link: "Delete deck"
+      add_link: "Add deck"
+    update:
+      success: "Deck updated succeffully"
+    destroy:
+      success: "Deck deleted"
+
+  user_sessions:
+    create:
+      success: "Successfull log in!"
+      danger: "Failed to log in"
+    destroy:
+      success: "Successfull log out"
+
+  static_page:
+    check:
+      success: "Correct!"
+      warning: "The hidden word was: %{translated_text}, translates as: %{original_text}, and you entered: %{card_original_text}. You probably mistyped?!"
+      danger: "Incorrect!"
+
+  helpers:
+      submit:
+        user:
+          create: "Create profile"
+          update: "Save profile changes"
+        card:
+          create: "Create card"
+          update: "Save card changes"
+        deck:
+          create: "Create deck"
+          update: "Save deck changes"
+
+  simple_form:
+    labels:
+      user:
+        email: "Email"
+        password: "Password"
+        password_confirmation: "Password confirmation"
+        locale: "Language"
+      card:
+        deck: "Deck"
+        original_text: "Original text"
+        translated_text: "Translated text"
+        image: "Choose image"
+        remote_image_url: "Paste url for remote image"
+      deck:
+        name: "Name"
+        current: "Current"
+      session:
+        email: "Email"
+        password: "Password"

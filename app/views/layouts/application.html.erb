@@ -10,29 +10,39 @@
   <nav class="navbar navbar-default navbar-static-top">
     <div class="container">
       <div class="navbar-header">
-        <%= link_to 'Флэшкарточкер', root_path, class: "navbar-brand" %>
+        <%= link_to t('app_title'), root_path, class: "navbar-brand" %>
       </div>
       <div class="navbar-coolapse">
+      <ul class="nav navbar-nav ">
+      <% if !logged_in? %>
+        <li>
+          <%= link_to 'Eng', url_for( :locale => 'en' ) %>
+        </li>
+        <li>
+          <%= link_to 'Рус', url_for( :locale => 'ru' ) %>
+        </li>
+      <% end %>
+      </ul>
         <ul class="nav navbar-nav navbar-right">
           <% if logged_in? %>
           <li>
-            <%= link_to 'Карточки', cards_path %>
+            <%= link_to t('cards_link'), cards_path %>
           </li>
           <li>
-            <%= link_to 'Колоды', decks_path %>
+            <%= link_to t('decks_link'), decks_path %>
           </li>
           <li>
-            <%= link_to "Профиль", current_user %>
+            <%= link_to t('profile_link'), current_user %>
           </li>
           <li>
-            <%= link_to "Выйти", :logout, method: :post %>
+            <%= link_to t('log_out'), :logout, method: :post %>
           </li>
           <% else %>
           <li>
-            <%= link_to "Зарегестрироваться", new_user_path %>
+            <%= link_to t('register_link'), new_user_path %>
           </li>
           <li>
-            <%= link_to "Войти", :login %>
+            <%= link_to t('log_in'), :login %>
           </li>
           <% end %>
         </ul>
@@ -45,5 +55,13 @@
     <% end %>
     <%= yield %>
   </div>
+  <footer class="footer navbar navbar-default navbar-fixed-bottom">
+    <div class="container">
+      <% if !logged_in? %>
+          <%= link_to 'Eng /', url_for( :locale => 'en' ) %>
+          <%= link_to 'Рус', url_for( :locale => 'ru' ) %>
+      <% end %>
+    </div>
+  </footer>
 </body>
 </html>
