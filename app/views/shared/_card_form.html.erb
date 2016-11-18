@@ -10,6 +10,7 @@
   <%= simple_form_for :card, url: :check do |f| %>
     <%= f.input :original_text, label: t('translate_field_title') %>
     <%= f.hidden_field :card_id, value: @random_card.id %>
+    <%= f.hidden_field :timer %>
     <%= f.submit t('check_button_title'), class: 'btn btn-primary' %>
   <% end %>
 </div>
