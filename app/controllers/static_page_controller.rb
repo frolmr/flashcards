@@ -2,11 +2,23 @@ class StaticPageController < ApplicationController
   def home
     if current_user
       @random_card = current_user.find_current_deck.cards.expires.sample || current_user.cards.sample
+      respond_to do |format|
+        format.html
+        format.json do
+          render json: {
+            id: @random_card.id,
+            image: @random_card.image.url,
+            translated_text: @random_card.translated_text,
+            flash_key: flash.keys.first.to_s,
+            flash_message: flash[flash.keys.first.to_s]
+          }
+        end
+      end
     end
   end
 
   def check
-    @card = Card.find(params[:card][:card_id])
+    @card = Card.find(params[:card][:id])
     answer_time = params[:card][:timer].to_i
     if @card.card_check(params[:card][:original_text]).zero?
       CardAttrUpdater.new(@card, answer_time).check_result

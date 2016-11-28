@@ -2,8 +2,8 @@
 <html>
 <head>
   <title>Flashcards</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -50,9 +50,11 @@
     </div>
   </nav>
   <div class="container">
-    <% flash.each do |key, value| %>
+    <div id="flash">
+      <% flash.each do |key, value| %>
         <%= content_tag(:div, value, class: "alert alert-#{key}") %>
-    <% end %>
+      <% end %>
+    </div>
     <%= yield %>
   </div>
   <footer class="footer navbar navbar-default navbar-fixed-bottom">
