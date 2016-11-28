@@ -1,4 +1,4 @@
-class UsersController < ApplicationController
+class Dashboard::UsersController < ApplicationController
   before_action :require_login, only: [:show, :edit, :update]
   before_action :get_user, only: [:edit, :update]
   before_action :correct_user, only: [:edit, :update]
