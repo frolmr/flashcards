@@ -9,7 +9,8 @@ class StaticPageController < ApplicationController
             id: @random_card.id,
             image: @random_card.image.url,
             translated_text: @random_card.translated_text,
-            flash: flash
+            flash_key: flash.keys.first.to_s,
+            flash_message: flash[flash.keys.first.to_s]
           }
         end
       end
