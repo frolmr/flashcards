@@ -1,15 +1,15 @@
 <% if @random_card %>
 <p class="text-center"><%= t('main_question') %></p>
-<p class="text-center"><%= image_tag(@random_card.image) %></p>
-<p class="text-center">
+<p id="card__image" class="text-center"><%= image_tag(@random_card.image) %></p>
+<p id="card__text" class="text-center">
   <em><%= @random_card.translated_text %></em>
 </p>
 <br>
 <br>
 <div>
-  <%= simple_form_for :card, url: :check do |f| %>
+  <%= simple_form_for :card, url: :check, remote: true, html: { id: "card-check__form" } do |f| %>
     <%= f.input :original_text, label: t('translate_field_title') %>
-    <%= f.hidden_field :card_id, value: @random_card.id %>
+    <%= f.hidden_field :id, value: @random_card.id %>
     <%= f.hidden_field :timer %>
     <%= f.submit t('check_button_title'), class: 'btn btn-primary' %>
   <% end %>
