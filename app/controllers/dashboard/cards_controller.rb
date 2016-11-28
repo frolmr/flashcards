@@ -1,4 +1,4 @@
-class CardsController < ApplicationController
+class Dashboard::CardsController < ApplicationController
   include CreateAction
 
   before_action :get_card, only: [:edit, :update, :destroy]

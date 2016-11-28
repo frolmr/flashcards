@@ -12,46 +12,7 @@ en:
   translate_field_title: "Translation"
   authorization_danger: "Please authorize first"
 
-  users:
-    show:
-      title: "Profile"
-      email: "Your email:"
-      language: "Selected language:"
-      edit: "Edit profile"
-    create:
-      success: "New user was created"
-      danger: "Something went wrong!"
-    update:
-      success: "Profile updated successfully"
-
-  cards:
-    index:
-      title: "Cards list"
-      word: "Word"
-      translation: "Translation"
-      deck: "Deck"
-      review_date: "Review date"
-      edit_link: "Edit card"
-      delete_link: "Delete card"
-      add_link: "Add card"
-    update:
-      success: "Card updated succeffully"
-    destroy:
-      success: "Card deleted"
-
-  decks:
-    index:
-      title: "Decks:"
-      current: "Current deck:"
-      related_cards: "Related cards:"
-      edit_link: "Edit deck"
-      delete_link: "Delete deck"
-      add_link: "Add deck"
-    update:
-      success: "Deck updated succeffully"
-    destroy:
-      success: "Deck deleted"
-
+  home:
   user_sessions:
     create:
       success: "Successfull log in!"
@@ -59,11 +20,52 @@ en:
     destroy:
       success: "Successfull log out"
 
-  static_page:
-    check:
-      success: "Correct!"
-      warning: "The hidden word was: %{translated_text}, translates as: %{original_text}, and you entered: %{card_original_text}. You probably mistyped?!"
-      danger: "Incorrect!"
+  dashboard:
+    users:
+      show:
+        title: "Profile"
+        email: "Your email:"
+        language: "Selected language:"
+        edit: "Edit profile"
+      create:
+        success: "New user was created"
+        danger: "Something went wrong!"
+      update:
+        success: "Profile updated successfully"
+
+    cards:
+      index:
+        title: "Cards list"
+        word: "Word"
+        translation: "Translation"
+        deck: "Deck"
+        review_date: "Review date"
+        edit_link: "Edit card"
+        delete_link: "Delete card"
+        add_link: "Add card"
+      update:
+        success: "Card updated succeffully"
+      destroy:
+        success: "Card deleted"
+
+    decks:
+      index:
+        title: "Decks:"
+        current: "Current deck:"
+        related_cards: "Related cards:"
+        edit_link: "Edit deck"
+        delete_link: "Delete deck"
+        add_link: "Add deck"
+      update:
+        success: "Deck updated succeffully"
+      destroy:
+        success: "Deck deleted"
+
+    static_page:
+      check:
+        success: "Correct!"
+        warning: "The hidden word was: %{translated_text}, translates as: %{original_text}, and you entered: %{card_original_text}. You probably mistyped?!"
+        danger: "Incorrect!"
 
   helpers:
       submit:

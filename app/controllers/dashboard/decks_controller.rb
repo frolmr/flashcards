@@ -1,4 +1,4 @@
-class DecksController < ApplicationController
+class Dashboard::DecksController < ApplicationController
   include CreateAction
 
   before_action :get_deck, only: [:edit, :update, :destroy]

@@ -1,4 +1,4 @@
-class StaticPageController < ApplicationController
+class Dashboard::StaticPageController < ApplicationController
   def home
     if current_user
       @random_card = current_user.find_current_deck.cards.expires.sample || current_user.cards.sample

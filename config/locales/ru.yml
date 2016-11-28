@@ -12,58 +12,60 @@ ru:
   translate_field_title: "Перевод"
   authorization_danger: "Пожалуйста, сначала авторизуйтесь"
 
-  users:
-    show:
-      title: "Учетная запись"
-      email: "Ваш email:"
-      language: "Выбранный язык:"
-      edit: "Редактировать профиль"
-    create:
-      success: "Добавлен новый пользователь"
-      danger: "Что-то пошло не так!"
-    update:
-      success: "Профиль успешно обновлен"
+  home:
+    user_sessions:
+      create:
+        success: "Успешный вход"
+        danger: "Не удалось войти"
+      destroy:
+        success: "Успешный выход"
 
-  cards:
-    index:
-      title: "Список карточек"
-      word: "Слово"
-      translation: "Перевод"
-      deck: "Колода"
-      review_date: "Дата пересмотра"
-      edit_link: "Редактировать карточку"
-      delete_link: "Удалить карточку"
-      add_link: "Добавить карточку"
-    update:
-      success: "Карточка успешно обновлена"
-    destroy:
-      success: "Карточка удалена"
+  dashboard:
+    users:
+      show:
+        title: "Учетная запись"
+        email: "Ваш email:"
+        language: "Выбранный язык:"
+        edit: "Редактировать профиль"
+      create:
+        success: "Добавлен новый пользователь"
+        danger: "Что-то пошло не так!"
+      update:
+        success: "Профиль успешно обновлен"
 
-  decks:
-    index:
-      title: "Колоды:"
-      current: "Текущая колода:"
-      related_cards: "Связанные карточки:"
-      edit_link: "Редактировать колоду"
-      delete_link: "Удалить колоду"
-      add_link: "Добавить колоду"
-    update:
-      success: "Колода успешно обновлена"
-    destroy:
-      success: "Колода удалена"
+    cards:
+      index:
+        title: "Список карточек"
+        word: "Слово"
+        translation: "Перевод"
+        deck: "Колода"
+        review_date: "Дата пересмотра"
+        edit_link: "Редактировать карточку"
+        delete_link: "Удалить карточку"
+        add_link: "Добавить карточку"
+      update:
+        success: "Карточка успешно обновлена"
+      destroy:
+        success: "Карточка удалена"
 
-  user_sessions:
-    create:
-      success: "Успешный вход"
-      danger: "Не удалось войти"
-    destroy:
-      success: "Успешный выход"
+    decks:
+      index:
+        title: "Колоды:"
+        current: "Текущая колода:"
+        related_cards: "Связанные карточки:"
+        edit_link: "Редактировать колоду"
+        delete_link: "Удалить колоду"
+        add_link: "Добавить колоду"
+      update:
+        success: "Колода успешно обновлена"
+      destroy:
+        success: "Колода удалена"
 
-  static_page:
-    check:
-      success: "Правильно!"
-      warning: "Загаданное слово: %{translated_text}, переводится как %{original_text}, а вы ввели: %{card_original_text}. Вы, вероятно, опечатались?!"
-      danger: "Не правильно!"
+    static_page:
+      check:
+        success: "Правильно!"
+        warning: "Загаданное слово: %{translated_text}, переводится как %{original_text}, а вы ввели: %{card_original_text}. Вы, вероятно, опечатались?!"
+        danger: "Не правильно!"
 
   helpers:
       submit:

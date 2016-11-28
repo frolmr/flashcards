@@ -18,19 +18,19 @@ describe 'card checking', type: :feature do
   it 'should approve the correct translation' do
     fill_in 'card_original_text', with: 'Hello'
     click_button I18n.t("check_button_title")
-    expect(page).to have_content I18n.t('static_page.check.success')
+    expect(page).to have_content I18n.t('dashboard.static_page.check.success')
   end
 
   it 'should approve with misspelling' do
     check_word = 'Helo'
     fill_in 'card_original_text', with: check_word
     click_button I18n.t("check_button_title")
-    expect(page).to have_content I18n.t('static_page.check.warning', translated_text: card.translated_text, original_text: card.original_text, card_original_text: check_word)
+    expect(page).to have_content I18n.t('dashboard.static_page.check.warning', translated_text: card.translated_text, original_text: card.original_text, card_original_text: check_word)
   end
 
   it 'should NOT approve the incorrect translation' do
     fill_in 'card_original_text', with: 'Прюэт'
     click_button I18n.t("check_button_title")
-    expect(page).to have_content I18n.t('static_page.check.danger')
+    expect(page).to have_content I18n.t('dashboard.static_page.check.danger')
   end
 end
