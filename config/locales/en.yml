@@ -13,12 +13,12 @@ en:
   authorization_danger: "Please authorize first"
 
   home:
-  user_sessions:
-    create:
-      success: "Successfull log in!"
-      danger: "Failed to log in"
-    destroy:
-      success: "Successfull log out"
+    user_sessions:
+      create:
+        success: "Successfull log in!"
+        danger: "Failed to log in"
+      destroy:
+        success: "Successfull log out"
 
   dashboard:
     users:
