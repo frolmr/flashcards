@@ -7,11 +7,11 @@ function Timer() {
       setTimeout(go, 1000);
       seconds++;
     }();
-  }
+  };
 
   this.dropTimer = function() {
     seconds = 1;
-  }
+  };
 }
 
 $(document).ready(function() {
