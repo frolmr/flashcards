@@ -24,7 +24,7 @@ class User < ActiveRecord::Base
   end
 
   def self.notify_pending_cards
-    User.joins(:cards).merge(Card.expires).uniq.each do |user|
+    User.joins(:cards).merge(Card.expires).distinct.each do |user|
       CardsMailer.pending_cards_notification(user).deliver_now
     end
   end

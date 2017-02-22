@@ -16,8 +16,7 @@ class Dashboard::DecksController < ApplicationController
     create_new_item(@deck)
   end
 
-  def edit
-  end
+  def edit; end
 
   def update
     if @deck.update_attributes(deck_params)

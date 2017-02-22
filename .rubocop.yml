@@ -258,3 +258,8 @@ Lint/LiteralInCondition:
 Lint/LiteralInInterpolation:
   Description: Checks for literals used in interpolation.
   Enabled: false
+Style/ClassAndModuleChildren:
+  EnforcedStyle: compact
+  SupportedStyles:
+    - nested
+    - compact

@@ -16,8 +16,7 @@ class Dashboard::CardsController < ApplicationController
     create_new_item(@card)
   end
 
-  def edit
-  end
+  def edit; end
 
   def update
     if @card.update_attributes(card_params)

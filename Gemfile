@@ -1,22 +1,22 @@
 source 'https://rubygems.org'
-ruby '2.3.0'
+ruby '2.3.3'
 #ruby-gemset=flashcards
 
-gem 'rails', '4.2.7.1'
-gem 'sass-rails', '~> 5.0'
-gem 'uglifier', '>= 1.3.0'
-gem 'coffee-rails', '~> 4.1.0'
+gem 'rails', '5.0.1'
+gem 'sass-rails'
+gem 'uglifier'
+gem 'coffee-rails'
 gem 'jquery-rails'
 gem 'turbolinks'
-gem 'jbuilder', '~> 2.0'
-gem 'sdoc', '~> 0.4.0', group: :doc
-gem 'pg', '~> 0.18.4'
-gem 'simple_form', '~> 3.2', '>= 3.2.1'
-gem 'nokogiri', '~> 1.6', '>= 1.6.8'
+gem 'jbuilder'
+gem 'sdoc', group: :doc
+gem 'pg'
+gem 'simple_form'
+gem 'nokogiri'
 gem 'sorcery'
 gem 'carrierwave'
 gem 'mini_magick'
-gem 'fog-aws'
+gem 'fog'
 gem 'rb-readline'
 gem 'damerau-levenshtein'
 gem 'whenever', require: false
@@ -31,7 +31,7 @@ group :development, :test do
 end
 
 group :development do
-  gem 'web-console', '~> 2.0'
+  gem 'web-console'
   gem 'spring'
 end
 
