@@ -1,0 +1,20 @@
+<%= form_tag load_word_pairs_path, method: :get, remote: true do %>
+  <div class="form-group">
+    <%= label_tag t('.link') %>
+    <%= text_field_tag :link, nil, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= label_tag t('.original_word_tag') %>
+    <%= text_field_tag :original_word_tag, nil, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= label_tag t('.translated_word_tag') %>
+    <%= text_field_tag :translated_word_tag, nil, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= collection_select :deck, :user_id, current_user.decks, :id, :name %>
+  </div>
+    <%= submit_tag t('.load_cards'), class: 'btn btn-primary', id: 'words_load' %>
+<% end %>
+<br><br>
+<div id="load_result"></div>
