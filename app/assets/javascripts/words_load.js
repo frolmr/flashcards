@@ -6,7 +6,7 @@ $(document).ready(function() {
       count++;
     }
     return count;
-  };
+  }
 
   $("#words_load").on("click", function() {
     $.ajax({
@@ -20,11 +20,11 @@ $(document).ready(function() {
         deck_id: $('#deck_user_id').val()
       },
       success: function(json) {
-        $("#load_result").append("<h4>Создано <strong>" + findLength(json.result) + "</strong> новых карточек</h4>")
-        $("#load_result").append("<h4>Ваши новые карточки:</h4><br>")
+        $("#load_result").append("<h4>Создано <strong>" + findLength(json.result) + "</strong> новых карточек</h4>");
+        $("#load_result").append("<h4>Ваши новые карточки:</h4><br>");
         for (var property in json.result) {
-          $("#load_result").append("<tr><td>" + property + "</td><td>" + json.result[property] + "</td></tr>")
-        };
+          $("#load_result").append("<tr><td>" + property + "</td><td>" + json.result[property] + "</td></tr>");
+        }
       }
     });
   });
