@@ -5,8 +5,10 @@ class LoadCardsJob < ApplicationJob
     result = {}
     page = Nokogiri::HTML(open(link))
     page.css(original_word_tag).each do |word|
-      result[word.text] = word.parent.css(translated_word_tag).text
-      Card.create(original_text: word.text, translated_text: word.parent.css(translated_word_tag).text, deck_id: deck_id, user: user)
+      original_text = word.text
+      translated_text = word.parent.css(translated_word_tag).text
+      result[original_text] = translated_text
+      Card.create(original_text: original_text, translated_text: translated_text, deck_id: deck_id, user: user)
     end
     result
   end
