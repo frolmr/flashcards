@@ -43,10 +43,19 @@ ru:
         edit_link: "Редактировать карточку"
         delete_link: "Удалить карточку"
         add_link: "Добавить карточку"
+        batch_download: "Пакетная загрузка"
       update:
         success: "Карточка успешно обновлена"
       destroy:
         success: "Карточка удалена"
+
+    load_cards:
+      new:
+        link: "Ссылка для загрузки"
+        original_word_tag: "Тэг оригинального слова"
+        translated_word_tag: "Тэг перевода"
+        deck_id: "Выберете колоду"
+        load_cards: 'Загрузить карточки'
 
     decks:
       index:

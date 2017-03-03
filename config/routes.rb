@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  require 'sidekiq/web'
+  mount Sidekiq::Web => '/sidekiq'
   scope module: "home" do
     post "oauth/callback" => "oauths#callback"
     get "oauth/callback" => "oauths#callback" # for use with Github, Facebook
@@ -15,5 +17,7 @@ Rails.application.routes.draw do
     resources :users
     post 'check' => 'static_page#check'
     get 'home' => 'static_page#home'
+    get 'batch_download' => 'load_cards#new'
+    get 'load_word_pairs' => 'load_cards#load_word_pairs'
   end
 end

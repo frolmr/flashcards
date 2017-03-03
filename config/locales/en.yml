@@ -43,10 +43,19 @@ en:
         edit_link: "Edit card"
         delete_link: "Delete card"
         add_link: "Add card"
+        batch_download: "Batch download"
       update:
         success: "Card updated succeffully"
       destroy:
         success: "Card deleted"
+
+    load_cards:
+      new:
+        link: "Load link"
+        original_word_tag: "Original word tag"
+        translated_word_tag: "Translated word tag"
+        deck_id: "Choose deck"
+        load_cards: 'Load cards'
 
     decks:
       index:

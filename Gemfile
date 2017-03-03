@@ -23,6 +23,7 @@ gem 'whenever', require: false
 gem 'http_accept_language'
 gem 'rollbar'
 gem 'newrelic_rpm'
+gem 'sidekiq'
 
 group :development, :test do
   gem 'byebug'
@@ -38,6 +39,7 @@ end
 group :test do
   gem 'capybara'
   gem 'factory_girl_rails'
+  gem 'webmock'
 end
 
 group :production do
