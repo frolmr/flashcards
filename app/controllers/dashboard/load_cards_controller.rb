@@ -3,10 +3,10 @@ class Dashboard::LoadCardsController < ApplicationController
 
   def load_word_pairs
     loaded_cards = LoadCardsJob.perform_now(current_user,
-                                      params[:link],
-                                      params[:original_word_tag],
-                                      params[:translated_word_tag],
-                                      params[:deck_id])
+                                            params[:link],
+                                            params[:original_word_tag],
+                                            params[:translated_word_tag],
+                                            params[:deck_id])
     respond_to do |format|
       format.json do
         render json: {
