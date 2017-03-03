@@ -2,7 +2,7 @@ class Dashboard::LoadCardsController < ApplicationController
   def new; end
 
   def load_word_pairs
-    result = LoadCardsJob.perform_now(current_user,
+    loaded_cards = LoadCardsJob.perform_now(current_user,
                                       params[:link],
                                       params[:original_word_tag],
                                       params[:translated_word_tag],
@@ -10,7 +10,7 @@ class Dashboard::LoadCardsController < ApplicationController
     respond_to do |format|
       format.json do
         render json: {
-          result: result
+          result: loaded_cards
         }
       end
     end
