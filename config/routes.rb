@@ -12,6 +12,7 @@ Rails.application.routes.draw do
 
   scope module: "dashboard" do
     root 'static_page#home'
+    put 'find_flickr_images' => 'cards#find_on_flickr'
     resources :cards, except: [:show]
     resources :decks, except: [:show]
     resources :users

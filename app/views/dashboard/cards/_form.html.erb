@@ -6,3 +6,17 @@
   <%= f.input :remote_image_url %>
   <%= f.submit class: 'btn btn-primary' %>
 <% end %>
+
+<a href="#" id="flickr_load_form_toggle" class="btn btn-default">Загрузить из Flickr</a>
+
+<div class="form-inline" id="flickr_load_form">
+  <div class="form-group">
+  <%= form_tag find_flickr_images_path, method: :put, remote: true do %>
+    <%= text_field_tag :flickr_tag %>
+    <%= submit_tag 'Найти во Flickr', class: 'btn btn-default', id: 'search_images' %>
+  <% end %>
+  </div>
+</div>
+
+<div id="spinner"><%= image_tag 'ajax-loader.gif' %></div>
+<div id="photos"></div>

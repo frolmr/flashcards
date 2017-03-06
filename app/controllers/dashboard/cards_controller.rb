@@ -33,6 +33,15 @@ class Dashboard::CardsController < ApplicationController
     redirect_to cards_path
   end
 
+  def find_on_flickr
+    urls_list = FlickrSearch.new.search_photos_urls(params[:flickr_tag])
+    respond_to do |format|
+      format.json do
+        render json: { list: urls_list }
+      end
+    end
+  end
+
   private
 
   def card_params
