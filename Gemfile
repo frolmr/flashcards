@@ -25,6 +25,7 @@ gem 'rollbar'
 gem 'newrelic_rpm'
 gem 'sidekiq'
 gem 'flickraw-cached'
+gem 'redis-rails'
 
 group :development, :test do
   gem 'byebug'
