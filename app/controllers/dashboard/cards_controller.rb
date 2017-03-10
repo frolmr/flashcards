@@ -34,7 +34,7 @@ class Dashboard::CardsController < ApplicationController
   end
 
   def find_on_flickr
-    urls_list = FlickrSearch.new.search_photos_urls(params[:flickr_tag])
+    urls_list = Rails.cache.fetch(params[:flickr_tag].to_s, expires_in: 6.hours) { FlickrSearch.new.search_photos_urls(params[:flickr_tag]) }
     respond_to do |format|
       format.json do
         render json: { list: urls_list }

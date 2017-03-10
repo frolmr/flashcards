@@ -299,6 +299,22 @@ GEM
       trollop (~> 2.1)
     rdoc (4.3.0)
     redis (3.3.3)
+    redis-actionpack (5.0.1)
+      actionpack (>= 4.0, < 6)
+      redis-rack (>= 1, < 3)
+      redis-store (>= 1.1.0, < 1.4.0)
+    redis-activesupport (5.0.1)
+      activesupport (>= 3, < 6)
+      redis-store (~> 1.2.0)
+    redis-rack (2.0.1)
+      rack (>= 2.0, < 3)
+      redis-store (>= 1.2, < 1.4)
+    redis-rails (5.0.1)
+      redis-actionpack (~> 5.0.0)
+      redis-activesupport (~> 5.0.0)
+      redis-store (~> 1.2.0)
+    redis-store (1.2.0)
+      redis (>= 2.2)
     rollbar (2.14.0)
       multi_json
     rspec-core (3.5.4)
@@ -402,6 +418,7 @@ DEPENDENCIES
   rails (= 5.0.1)
   rails_12factor
   rb-readline
+  redis-rails
   rollbar
   rspec-rails
   sass-rails
