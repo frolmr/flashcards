@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'activities' => 'activities#index'
+
   require 'sidekiq/web'
   mount Sidekiq::Web => '/sidekiq'
   scope module: "home" do
@@ -12,7 +14,7 @@ Rails.application.routes.draw do
 
   scope module: "dashboard" do
     root 'static_page#home'
-    put 'find_flickr_images' => 'cards#find_on_flickr'
+    post 'find_flickr_images' => 'cards#find_on_flickr'
     resources :cards, except: [:show]
     resources :decks, except: [:show]
     resources :users

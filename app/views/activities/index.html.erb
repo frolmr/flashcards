@@ -1,0 +1,23 @@
+<h1>Resent activities</h1>
+
+<ul class="nav nav-tabs" role="tablist">
+  <li role="presentation" class="active"><a href="#user" aria-controls="user" role="tab" data-toggle="tab">User</a></li>
+  <li role="presentation"><a href="#cards" aria-controls="cards" role="tab" data-toggle="tab">Cards</a></li>
+  <li role="presentation"><a href="#api" aria-controls="api" role="tab" data-toggle="tab">API</a></li>
+  <li role="presentation"><a href="#navigation" aria-controls="navigation" role="tab" data-toggle="tab">Navigation</a></li>
+</ul>
+
+<div class="tab-content">
+  <div role="tabpanel" class="tab-pane active" id="user">
+    <%= render 'user_activity' %>
+  </div>
+  <div role="tabpanel" class="tab-pane" id="cards">
+    <%= render 'cards_activity' %>
+  </div>
+  <div role="tabpanel" class="tab-pane" id="api">
+    <%= render 'api_activity' %>
+  </div>
+  <div role="tabpanel" class="tab-pane" id="navigation">
+    <%= render 'navigation_activity' %>
+  </div>
+</div>

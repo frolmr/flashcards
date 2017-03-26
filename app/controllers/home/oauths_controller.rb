@@ -11,6 +11,7 @@ class Home::OauthsController < ApplicationController
     provider = auth_params[:provider]
     if @user = login_from(provider)
       redirect_to root_path, notice: "Logged in from #{provider.titleize}!"
+      @user.create_activity key: 'user.oauth', activity_type: 'user'
     else
       begin
         @user = create_from(provider)
@@ -19,6 +20,7 @@ class Home::OauthsController < ApplicationController
         reset_session # protect from session fixation attack
         auto_login(@user)
         redirect_to root_path, notice: "Logged in from #{provider.titleize}!"
+        @user.create_activity key: 'user.oauth', activity_type: 'user'
       rescue
         redirect_to root_path, alert: "Failed to login from #{provider.titleize}!"
       end

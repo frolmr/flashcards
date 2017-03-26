@@ -1,7 +1,10 @@
 class Dashboard::UsersController < ApplicationController
+  include PageVisitActivity
+
   before_action :require_login, only: [:show, :edit, :update]
   before_action :get_user, only: [:edit, :update]
   before_action :correct_user, only: [:edit, :update]
+  after_action :track_page_visit, only: [:show, :edit]
 
   def new
     @user = User.new
@@ -14,6 +17,7 @@ class Dashboard::UsersController < ApplicationController
       update_locale
       flash[:success] = t('.success')
       redirect_to root_path
+      @user.create_activity :create, activity_type: 'user'
     else
       flash.now[:danger] = t('.danger')
       render 'new'

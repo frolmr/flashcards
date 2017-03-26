@@ -1,9 +1,9 @@
 $(document).ready(function() {
-  $('#search_images').on("click", function(e) {
+  $('#search_images').on("click", function() {
     data = $('#flickr_tag').val();
     $.ajax({
+      type: 'post',
       url: '/find_flickr_images',
-      type: 'put',
       dataType: 'json',
       data: { flickr_tag: data },
       success: function(json) {

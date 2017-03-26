@@ -1,7 +1,9 @@
 class Dashboard::CardsController < ApplicationController
   include CreateAction
+  include PageVisitActivity
 
   before_action :get_card, only: [:edit, :update, :destroy]
+  after_action :track_page_visit, only: [:index, :new, :edit]
 
   def index
     @cards = current_user.cards
@@ -14,6 +16,7 @@ class Dashboard::CardsController < ApplicationController
   def create
     @card = current_user.cards.build(card_params)
     create_new_item(@card)
+    @card.create_activity :create, activity_type: 'card', owner: current_user
   end
 
   def edit; end
@@ -35,6 +38,7 @@ class Dashboard::CardsController < ApplicationController
 
   def find_on_flickr
     urls_list = Rails.cache.fetch(params[:flickr_tag].to_s, expires_in: 6.hours) { FlickrSearch.new.search_photos_urls(params[:flickr_tag]) }
+    current_user.create_activity action: 'find_on_flickr', activity_type: 'api', params: { search_tag: params[:flickr_tag] }, owner: current_user
     respond_to do |format|
       format.json do
         render json: { list: urls_list }
