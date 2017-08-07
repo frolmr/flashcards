@@ -1,7 +1,9 @@
 class Dashboard::DecksController < ApplicationController
   include CreateAction
+  include PageVisitActivity
 
   before_action :get_deck, only: [:edit, :update, :destroy]
+  after_action :track_page_visit, only: [:index, :new, :edit]
 
   def index
     @decks = current_user.decks

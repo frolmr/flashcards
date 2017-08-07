@@ -1,0 +1,9 @@
+<% if @navigation_activity %>
+  <ul>
+    <% @navigation_activity.each do |activity| %>
+      <li>User <%= activity.owner.email %> visited <%= activity.key %> page at <%= activity.created_at.to_formatted_s(:long_ordinal) %></li>
+    <% end %>
+  </ul>
+<% else %>
+  No navigation activities yet
+<% end %>

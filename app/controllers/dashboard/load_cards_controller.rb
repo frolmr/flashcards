@@ -1,4 +1,8 @@
 class Dashboard::LoadCardsController < ApplicationController
+  include PageVisitActivity
+
+  after_action :track_page_visit, only: [:new]
+
   def new; end
 
   def load_word_pairs

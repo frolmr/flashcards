@@ -1,0 +1,7 @@
+<% if @api_activity %>
+  <ul>
+    <% @api_activity.each do |activity| %>
+      <li><%= render_activity activity %></li>
+    <% end %>
+  </ul>
+<% end %>

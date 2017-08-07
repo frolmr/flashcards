@@ -26,6 +26,8 @@ gem 'newrelic_rpm'
 gem 'sidekiq'
 gem 'flickraw-cached'
 gem 'redis-rails'
+gem 'puma'
+gem 'public_activity'
 
 group :development, :test do
   gem 'byebug'

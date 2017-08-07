@@ -11,10 +11,8 @@
 
 <div class="form-inline" id="flickr_load_form">
   <div class="form-group">
-  <%= form_tag find_flickr_images_path, method: :put, remote: true do %>
     <%= text_field_tag :flickr_tag %>
     <%= submit_tag 'Найти во Flickr', class: 'btn btn-default', id: 'search_images' %>
-  <% end %>
   </div>
 </div>
 
